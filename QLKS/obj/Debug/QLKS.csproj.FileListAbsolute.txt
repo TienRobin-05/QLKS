@@ -1,0 +1,13 @@
+C:\HocTap\QLKS\project\QLKS\QLKS\bin\Debug\QLKS.exe.config
+C:\HocTap\QLKS\project\QLKS\QLKS\bin\Debug\QLKS.exe
+C:\HocTap\QLKS\project\QLKS\QLKS\bin\Debug\QLKS.pdb
+C:\HocTap\QLKS\project\QLKS\QLKS\obj\Debug\QLKS.csprojResolveAssemblyReference.cache
+C:\HocTap\QLKS\project\QLKS\QLKS\obj\Debug\QLKS.Login.resources
+C:\HocTap\QLKS\project\QLKS\QLKS\obj\Debug\QLKS.Properties.Resources.resources
+C:\HocTap\QLKS\project\QLKS\QLKS\obj\Debug\QLKS.csproj.GenerateResource.Cache
+C:\HocTap\QLKS\project\QLKS\QLKS\obj\Debug\QLKS.exe
+C:\HocTap\QLKS\project\QLKS\QLKS\obj\Debug\QLKS.pdb
+C:\HocTap\QLKS\project\QLKS\QLKS\obj\Debug\QLKS.Home.resources
+C:\QLKS\project\QLKS\bin\Debug\QLKS.exe.config
+C:\QLKS\project\QLKS\obj\Debug\QLKS.exe
+C:\QLKS\project\QLKS\obj\Debug\QLKS.pdb
