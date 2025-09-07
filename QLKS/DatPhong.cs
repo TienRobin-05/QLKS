@@ -10,22 +10,26 @@ using System.Windows.Forms;
 
 namespace QLKS
 {
-    public partial class Home : Form
+    public partial class DatPhong : Form
     {
-        public Home()
+        public DatPhong()
         {
             InitializeComponent();
         }
 
-        private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            Application.Exit();
+
         }
 
-        private void btnDatPhong_Click(object sender, EventArgs e)
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
         {
-            DatPhong dp = new DatPhong();
-            dp.Show();
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -26,23 +26,35 @@ namespace QLKS
         private void btnLog_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=QLKS;Integrated Security=True");
-            conn.Open();
-            string tk = txtTK.Text;
-            string mk = txtMK.Text;
-            string sql = "select *from Employees where Username='"+tk+"'and Password='"+mk+"'";
-            SqlCommand cmd = new SqlCommand(sql,conn);
-            SqlDataReader dta= cmd.ExecuteReader();
-            if (dta.Read() == true)
+            try
             {
-                MessageBox.Show("Đăng nhập thành công","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Home f = new Home();
-                f.Show();
-                this.Hide();
+                conn.Open();
+                string tk = txtTK.Text;
+                string mk = txtMK.Text;
+                string sql = "select *from Employees where Username='" + tk + "'and Password='" + mk + "'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataReader dta = cmd.ExecuteReader();
+                if (dta.Read() == true)
+                {
+                    MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Home f = new Home();
+                    f.Show();
+                    this.Hide();
+                }
+                else if(txtMK.Text == ""||txtTK.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else 
+                {
+                    MessageBox.Show("Đăng nhập thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Đăng nhập thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Lỗi kết nối");
             }
+            
         }
         //Thoát Login
         private void btnExit_Click(object sender, EventArgs e)
