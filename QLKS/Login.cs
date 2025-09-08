@@ -31,7 +31,7 @@ namespace QLKS
                 conn.Open();
                 string tk = txtTK.Text;
                 string mk = txtMK.Text;
-                string sql = "select *from Employees where Username='" + tk + "'and Password='" + mk + "'";
+                string sql = "select *from NhanVien where Tk='" + tk + "'and Mk='" + mk + "'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataReader dta = cmd.ExecuteReader();
                 if (dta.Read() == true)
@@ -52,7 +52,7 @@ namespace QLKS
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Lỗi kết nối");
+                MessageBox.Show("Lỗi kết nối" + ex.Message);
             }
             
         }

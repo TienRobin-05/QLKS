@@ -27,5 +27,22 @@ namespace QLKS
             DatPhong dp = new DatPhong();
             dp.Show();
         }
+
+        private void btnQLP_Click(object sender, EventArgs e)
+        {
+            QLPhong p = new QLPhong();
+            p.Show();
+        }
+
+        private void btnQLNV_Click(object sender, EventArgs e)
+        {
+            QLNhanVien nv = new QLNhanVien();
+            nv.Show();
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

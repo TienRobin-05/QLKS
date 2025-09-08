@@ -23,3 +23,13 @@ D:\QLKS\QLSV\QLKS\obj\Debug\QLKS.Properties.Resources.resources
 D:\QLKS\QLSV\QLKS\obj\Debug\QLKS.QLNhanVien.resources
 D:\QLKS\QLSV\QLKS\obj\Debug\QLKS.QLPhong.resources
 D:\QLKS\QLSV\QLKS\obj\Debug\QLKS.csproj.GenerateResource.Cache
+C:\QLKS\project\QLKS\bin\Debug\QLKS.exe
+C:\QLKS\project\QLKS\bin\Debug\QLKS.pdb
+C:\QLKS\project\QLKS\obj\Debug\QLKS.csprojResolveAssemblyReference.cache
+C:\QLKS\project\QLKS\obj\Debug\QLKS.DatPhong.resources
+C:\QLKS\project\QLKS\obj\Debug\QLKS.Home.resources
+C:\QLKS\project\QLKS\obj\Debug\QLKS.Login.resources
+C:\QLKS\project\QLKS\obj\Debug\QLKS.Properties.Resources.resources
+C:\QLKS\project\QLKS\obj\Debug\QLKS.QLNhanVien.resources
+C:\QLKS\project\QLKS\obj\Debug\QLKS.QLPhong.resources
+C:\QLKS\project\QLKS\obj\Debug\QLKS.csproj.GenerateResource.Cache
