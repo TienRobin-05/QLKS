@@ -44,7 +44,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(93, 20);
+            this.label1.Location = new System.Drawing.Point(155, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(270, 35);
             this.label1.TabIndex = 0;
@@ -54,41 +54,46 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 81);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(81, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 17);
+            this.label2.Size = new System.Drawing.Size(94, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tài khoản:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 118);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(87, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 17);
+            this.label3.Size = new System.Drawing.Size(88, 22);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mật khẩu:";
             // 
             // txtTK
             // 
-            this.txtTK.Location = new System.Drawing.Point(152, 81);
+            this.txtTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTK.Location = new System.Drawing.Point(190, 104);
             this.txtTK.Name = "txtTK";
-            this.txtTK.Size = new System.Drawing.Size(279, 22);
+            this.txtTK.Size = new System.Drawing.Size(317, 30);
             this.txtTK.TabIndex = 3;
             // 
             // txtMK
             // 
-            this.txtMK.Location = new System.Drawing.Point(152, 118);
+            this.txtMK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMK.Location = new System.Drawing.Point(190, 140);
             this.txtMK.Name = "txtMK";
-            this.txtMK.Size = new System.Drawing.Size(279, 22);
+            this.txtMK.Size = new System.Drawing.Size(317, 30);
             this.txtMK.TabIndex = 4;
             this.txtMK.UseSystemPasswordChar = true;
             // 
             // btnLog
             // 
-            this.btnLog.Location = new System.Drawing.Point(64, 226);
+            this.btnLog.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLog.Location = new System.Drawing.Point(91, 250);
             this.btnLog.Name = "btnLog";
-            this.btnLog.Size = new System.Drawing.Size(91, 34);
+            this.btnLog.Size = new System.Drawing.Size(112, 34);
             this.btnLog.TabIndex = 5;
             this.btnLog.Text = "Đăng nhập";
             this.btnLog.UseVisualStyleBackColor = true;
@@ -96,9 +101,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(319, 226);
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(395, 250);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(91, 34);
+            this.btnExit.Size = new System.Drawing.Size(112, 34);
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -106,9 +112,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(191, 226);
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(245, 250);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 34);
+            this.button1.Size = new System.Drawing.Size(112, 34);
             this.button1.TabIndex = 7;
             this.button1.Text = "Đăng ký";
             this.button1.UseVisualStyleBackColor = true;
@@ -116,10 +123,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(152, 146);
+            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(190, 176);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(115, 20);
+            this.checkBox1.Size = new System.Drawing.Size(143, 25);
             this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "Hiện mật khẩu.";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -128,9 +135,10 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(149, 169);
+            this.linkLabel1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(366, 177);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(113, 17);
+            this.linkLabel1.Size = new System.Drawing.Size(130, 21);
             this.linkLabel1.TabIndex = 9;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Quên mật khẩu?";
@@ -139,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 301);
+            this.ClientSize = new System.Drawing.Size(576, 374);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);

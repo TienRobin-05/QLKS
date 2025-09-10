@@ -44,5 +44,39 @@ namespace QLKS
         {
             
         }
+
+        private void mnDangxuat_Click(object sender, EventArgs e)
+        {
+            Login LG = new Login();
+            LG.Show();
+            this.Hide();
+        }
+
+        private void đặtPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DatPhong dp = new DatPhong();
+            dp.MdiParent = this;
+            dp.WindowState = FormWindowState.Maximized;
+            dp.Show();
+            dp.BringToFront();
+        }
+
+        private void quảnLýPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLPhong qlp = new QLPhong();
+            qlp.MdiParent = this;
+            qlp.WindowState = FormWindowState.Maximized;
+            qlp.Show();
+            qlp.BringToFront();
+        }
+
+        private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLNhanVien qlnv = new QLNhanVien();
+            qlnv.MdiParent = this;
+            qlnv.WindowState = FormWindowState.Maximized;
+            qlnv.Show();
+            qlnv.BringToFront();
+        }
     }
 }

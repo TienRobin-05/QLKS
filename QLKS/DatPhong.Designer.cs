@@ -72,8 +72,10 @@
             // Email
             // 
             this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
+            this.Email.Width = 125;
             // 
             // label2
             // 
@@ -207,8 +209,10 @@
             // SoPhong
             // 
             this.SoPhong.HeaderText = "Phòng";
+            this.SoPhong.MinimumWidth = 6;
             this.SoPhong.Name = "SoPhong";
             this.SoPhong.ReadOnly = true;
+            this.SoPhong.Width = 125;
             // 
             // txtsdt
             // 
@@ -303,6 +307,7 @@
             this.dataGridView.Location = new System.Drawing.Point(489, 23);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersWidth = 51;
             this.tableLayoutPanel1.SetRowSpan(this.dataGridView, 9);
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(529, 544);
@@ -311,32 +316,42 @@
             // IDKhach
             // 
             this.IDKhach.HeaderText = "STT";
+            this.IDKhach.MinimumWidth = 6;
             this.IDKhach.Name = "IDKhach";
             this.IDKhach.ReadOnly = true;
+            this.IDKhach.Width = 125;
             // 
             // HoTenDem
             // 
             this.HoTenDem.HeaderText = "Khách";
+            this.HoTenDem.MinimumWidth = 6;
             this.HoTenDem.Name = "HoTenDem";
             this.HoTenDem.ReadOnly = true;
+            this.HoTenDem.Width = 125;
             // 
             // Ten
             // 
             this.Ten.HeaderText = "Tên";
+            this.Ten.MinimumWidth = 6;
             this.Ten.Name = "Ten";
             this.Ten.ReadOnly = true;
+            this.Ten.Width = 125;
             // 
             // Sdt
             // 
             this.Sdt.HeaderText = "Điện thoại";
+            this.Sdt.MinimumWidth = 6;
             this.Sdt.Name = "Sdt";
             this.Sdt.ReadOnly = true;
+            this.Sdt.Width = 125;
             // 
             // Cccd
             // 
             this.Cccd.HeaderText = "CCCD";
+            this.Cccd.MinimumWidth = 6;
             this.Cccd.Name = "Cccd";
             this.Cccd.ReadOnly = true;
+            this.Cccd.Width = 125;
             // 
             // btnThoat
             // 
@@ -478,6 +493,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1021, 594);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DatPhong";
             this.Text = "DatPhong";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

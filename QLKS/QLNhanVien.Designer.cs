@@ -38,15 +38,15 @@
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Thoat = new System.Windows.Forms.Button();
             this.dataGridViewQLNV = new System.Windows.Forms.DataGridView();
-            this.textBoxTenNV = new System.Windows.Forms.TextBox();
-            this.textBoxSDTNV = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxMaNV = new System.Windows.Forms.TextBox();
             this.IDNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTenDem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxTenNV = new System.Windows.Forms.TextBox();
+            this.textBoxSDTNV = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxMaNV = new System.Windows.Forms.TextBox();
             this.tableLayoutPanelQLNV.SuspendLayout();
             this.tableLayoutPanelbtn_NV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQLNV)).BeginInit();
@@ -209,10 +209,56 @@
             this.dataGridViewQLNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewQLNV.Name = "dataGridViewQLNV";
             this.dataGridViewQLNV.ReadOnly = true;
+            this.dataGridViewQLNV.RowHeadersWidth = 51;
             this.dataGridViewQLNV.RowTemplate.Height = 28;
             this.dataGridViewQLNV.Size = new System.Drawing.Size(1350, 278);
             this.dataGridViewQLNV.TabIndex = 4;
             this.dataGridViewQLNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewQLNV_CellClick);
+            // 
+            // IDNV
+            // 
+            this.IDNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.IDNV.HeaderText = "STT";
+            this.IDNV.MinimumWidth = 6;
+            this.IDNV.Name = "IDNV";
+            this.IDNV.ReadOnly = true;
+            this.IDNV.Width = 64;
+            // 
+            // HoTenDem
+            // 
+            this.HoTenDem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.HoTenDem.HeaderText = "Họ Tên Đệm";
+            this.HoTenDem.MinimumWidth = 6;
+            this.HoTenDem.Name = "HoTenDem";
+            this.HoTenDem.ReadOnly = true;
+            this.HoTenDem.Width = 117;
+            // 
+            // Ten
+            // 
+            this.Ten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Ten.HeaderText = "Tên";
+            this.Ten.MinimumWidth = 6;
+            this.Ten.Name = "Ten";
+            this.Ten.ReadOnly = true;
+            this.Ten.Width = 62;
+            // 
+            // MaNV
+            // 
+            this.MaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MaNV.HeaderText = "Mã Nhân Viên";
+            this.MaNV.MinimumWidth = 6;
+            this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
+            this.MaNV.Width = 126;
+            // 
+            // SDT
+            // 
+            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SDT.HeaderText = "Số Điện Thoại";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            this.SDT.Width = 127;
             // 
             // textBoxTenNV
             // 
@@ -256,52 +302,13 @@
             this.textBoxMaNV.Size = new System.Drawing.Size(807, 34);
             this.textBoxMaNV.TabIndex = 8;
             // 
-            // IDNV
-            // 
-            this.IDNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.IDNV.HeaderText = "STT";
-            this.IDNV.Name = "IDNV";
-            this.IDNV.ReadOnly = true;
-            this.IDNV.Width = 60;
-            // 
-            // HoTenDem
-            // 
-            this.HoTenDem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.HoTenDem.HeaderText = "Họ Tên Đệm";
-            this.HoTenDem.Name = "HoTenDem";
-            this.HoTenDem.ReadOnly = true;
-            this.HoTenDem.Width = 113;
-            // 
-            // Ten
-            // 
-            this.Ten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Ten.HeaderText = "Tên";
-            this.Ten.Name = "Ten";
-            this.Ten.ReadOnly = true;
-            this.Ten.Width = 58;
-            // 
-            // MaNV
-            // 
-            this.MaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.MaNV.HeaderText = "Mã Nhân Viên";
-            this.MaNV.Name = "MaNV";
-            this.MaNV.ReadOnly = true;
-            this.MaNV.Width = 122;
-            // 
-            // SDT
-            // 
-            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SDT.HeaderText = "Số Điện Thoại";
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            this.SDT.Width = 123;
-            // 
             // QLNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1356, 580);
             this.Controls.Add(this.tableLayoutPanelQLNV);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "QLNhanVien";
             this.Text = "QLNhanVien";
