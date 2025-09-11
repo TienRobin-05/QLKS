@@ -78,5 +78,14 @@ namespace QLKS
             qlnv.Show();
             qlnv.BringToFront();
         }
+
+        private void quảnLýKháchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLKhach qlk = new QLKhach();
+            qlk.MdiParent = this;
+            qlk.WindowState = FormWindowState.Maximized;
+            qlk.Show();
+            qlk.BringToFront();
+        }
     }
 }

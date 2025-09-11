@@ -32,6 +32,9 @@ namespace QLKS
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewKP = new System.Windows.Forms.DataGridView();
+            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,11 +60,8 @@ namespace QLKS
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Thoat = new System.Windows.Forms.Button();
-            this.dataGridViewQLP = new System.Windows.Forms.DataGridView();
             this.lbGiaTien = new System.Windows.Forms.Label();
-            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewQLP = new System.Windows.Forms.DataGridView();
             this.IDPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TìnhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,12 +86,13 @@ namespace QLKS
             this.tableLayoutPanel1.Controls.Add(this.dataGridViewQLP, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.20446F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.79554F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1065, 538);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1198, 672);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -109,16 +110,17 @@ namespace QLKS
             this.tableLayoutPanel2.Controls.Add(this.textBoxGiaTien, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 2, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(665, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(748, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(397, 290);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(447, 362);
             this.tableLayoutPanel2.TabIndex = 14;
             // 
             // dataGridViewKP
@@ -132,14 +134,42 @@ namespace QLKS
             this.GiaTien});
             this.tableLayoutPanel2.SetColumnSpan(this.dataGridViewKP, 2);
             this.dataGridViewKP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewKP.Location = new System.Drawing.Point(21, 214);
+            this.dataGridViewKP.Location = new System.Drawing.Point(23, 266);
+            this.dataGridViewKP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewKP.Name = "dataGridViewKP";
             this.dataGridViewKP.ReadOnly = true;
             this.dataGridViewKP.RowHeadersWidth = 51;
             this.dataGridViewKP.RowTemplate.Height = 24;
-            this.dataGridViewKP.Size = new System.Drawing.Size(305, 73);
+            this.dataGridViewKP.Size = new System.Drawing.Size(345, 92);
             this.dataGridViewKP.TabIndex = 8;
             this.dataGridViewKP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKP_CellClick);
+            // 
+            // Loai
+            // 
+            this.Loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Loai.HeaderText = "Loại";
+            this.Loai.MinimumWidth = 6;
+            this.Loai.Name = "Loai";
+            this.Loai.ReadOnly = true;
+            this.Loai.Width = 75;
+            // 
+            // LoaiPhong
+            // 
+            this.LoaiPhong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.LoaiPhong.HeaderText = "Loại Phòng";
+            this.LoaiPhong.MinimumWidth = 6;
+            this.LoaiPhong.Name = "LoaiPhong";
+            this.LoaiPhong.ReadOnly = true;
+            this.LoaiPhong.Width = 125;
+            // 
+            // GiaTien
+            // 
+            this.GiaTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.GiaTien.HeaderText = "Giá TIền";
+            this.GiaTien.MinimumWidth = 6;
+            this.GiaTien.Name = "GiaTien";
+            this.GiaTien.ReadOnly = true;
+            this.GiaTien.Width = 106;
             // 
             // label6
             // 
@@ -149,7 +179,7 @@ namespace QLKS
             this.label6.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(323, 55);
+            this.label6.Size = new System.Drawing.Size(365, 69);
             this.label6.TabIndex = 0;
             this.label6.Text = "Kiểu Phòng";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,9 +189,9 @@ namespace QLKS
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(21, 55);
+            this.label7.Location = new System.Drawing.Point(23, 69);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 52);
+            this.label7.Size = new System.Drawing.Size(97, 64);
             this.label7.TabIndex = 1;
             this.label7.Text = "Loại Phòng";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -171,9 +201,9 @@ namespace QLKS
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(21, 107);
+            this.label8.Location = new System.Drawing.Point(23, 133);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 52);
+            this.label8.Size = new System.Drawing.Size(97, 64);
             this.label8.TabIndex = 2;
             this.label8.Text = "Giá Tiền";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -181,17 +211,19 @@ namespace QLKS
             // textLoaiPhong
             // 
             this.textLoaiPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textLoaiPhong.Location = new System.Drawing.Point(112, 58);
+            this.textLoaiPhong.Location = new System.Drawing.Point(126, 73);
+            this.textLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textLoaiPhong.Name = "textLoaiPhong";
-            this.textLoaiPhong.Size = new System.Drawing.Size(214, 22);
+            this.textLoaiPhong.Size = new System.Drawing.Size(242, 26);
             this.textLoaiPhong.TabIndex = 3;
             // 
             // textBoxGiaTien
             // 
             this.textBoxGiaTien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxGiaTien.Location = new System.Drawing.Point(112, 110);
+            this.textBoxGiaTien.Location = new System.Drawing.Point(126, 137);
+            this.textBoxGiaTien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxGiaTien.Name = "textBoxGiaTien";
-            this.textBoxGiaTien.Size = new System.Drawing.Size(214, 22);
+            this.textBoxGiaTien.Size = new System.Drawing.Size(242, 26);
             this.textBoxGiaTien.TabIndex = 4;
             // 
             // tableLayoutPanel4
@@ -206,21 +238,23 @@ namespace QLKS
             this.tableLayoutPanel4.Controls.Add(this.btn_KP_Them, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btn_KP_Sua, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(112, 162);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(126, 201);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(214, 46);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(242, 57);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
             // btn_KP_Xoa
             // 
             this.btn_KP_Xoa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_KP_Xoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_KP_Xoa.Location = new System.Drawing.Point(109, 3);
+            this.btn_KP_Xoa.Location = new System.Drawing.Point(123, 4);
+            this.btn_KP_Xoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_KP_Xoa.Name = "btn_KP_Xoa";
-            this.btn_KP_Xoa.Size = new System.Drawing.Size(47, 40);
+            this.btn_KP_Xoa.Size = new System.Drawing.Size(54, 49);
             this.btn_KP_Xoa.TabIndex = 4;
             this.btn_KP_Xoa.Text = "Xóa";
             this.btn_KP_Xoa.UseVisualStyleBackColor = true;
@@ -230,9 +264,10 @@ namespace QLKS
             // 
             this.btn_KP_Thoat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_KP_Thoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_KP_Thoat.Location = new System.Drawing.Point(162, 3);
+            this.btn_KP_Thoat.Location = new System.Drawing.Point(183, 4);
+            this.btn_KP_Thoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_KP_Thoat.Name = "btn_KP_Thoat";
-            this.btn_KP_Thoat.Size = new System.Drawing.Size(49, 40);
+            this.btn_KP_Thoat.Size = new System.Drawing.Size(56, 49);
             this.btn_KP_Thoat.TabIndex = 3;
             this.btn_KP_Thoat.Text = "Thoát";
             this.btn_KP_Thoat.UseVisualStyleBackColor = true;
@@ -241,9 +276,10 @@ namespace QLKS
             // 
             this.btn_KP_Them.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_KP_Them.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_KP_Them.Location = new System.Drawing.Point(3, 3);
+            this.btn_KP_Them.Location = new System.Drawing.Point(3, 4);
+            this.btn_KP_Them.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_KP_Them.Name = "btn_KP_Them";
-            this.btn_KP_Them.Size = new System.Drawing.Size(47, 40);
+            this.btn_KP_Them.Size = new System.Drawing.Size(54, 49);
             this.btn_KP_Them.TabIndex = 2;
             this.btn_KP_Them.Text = "Thêm";
             this.btn_KP_Them.UseVisualStyleBackColor = true;
@@ -253,9 +289,10 @@ namespace QLKS
             // 
             this.btn_KP_Sua.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_KP_Sua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_KP_Sua.Location = new System.Drawing.Point(56, 3);
+            this.btn_KP_Sua.Location = new System.Drawing.Point(63, 4);
+            this.btn_KP_Sua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_KP_Sua.Name = "btn_KP_Sua";
-            this.btn_KP_Sua.Size = new System.Drawing.Size(47, 40);
+            this.btn_KP_Sua.Size = new System.Drawing.Size(54, 49);
             this.btn_KP_Sua.TabIndex = 1;
             this.btn_KP_Sua.Text = "Sửa";
             this.btn_KP_Sua.UseVisualStyleBackColor = true;
@@ -280,26 +317,28 @@ namespace QLKS
             this.tableLayoutPanelQLP.Controls.Add(this.tableLayoutPanel3, 2, 5);
             this.tableLayoutPanelQLP.Controls.Add(this.lbGiaTien, 2, 4);
             this.tableLayoutPanelQLP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelQLP.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelQLP.Location = new System.Drawing.Point(3, 4);
+            this.tableLayoutPanelQLP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanelQLP.Name = "tableLayoutPanelQLP";
             this.tableLayoutPanelQLP.RowCount = 7;
-            this.tableLayoutPanelQLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanelQLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanelQLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelQLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelQLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelQLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelQLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelQLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanelQLP.Size = new System.Drawing.Size(656, 290);
+            this.tableLayoutPanelQLP.Size = new System.Drawing.Size(739, 362);
             this.tableLayoutPanelQLP.TabIndex = 1;
             // 
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(217, 259);
+            this.textBox1.Location = new System.Drawing.Point(243, 324);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(375, 30);
+            this.textBox1.Size = new System.Drawing.Size(424, 35);
             this.textBox1.TabIndex = 11;
             // 
             // label9
@@ -307,9 +346,9 @@ namespace QLKS
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(64, 256);
+            this.label9.Location = new System.Drawing.Point(71, 320);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(147, 34);
+            this.label9.Size = new System.Drawing.Size(166, 42);
             this.label9.TabIndex = 10;
             this.label9.Text = "Tìm Kiếm";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -322,7 +361,7 @@ namespace QLKS
             this.label1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(650, 96);
+            this.label1.Size = new System.Drawing.Size(733, 120);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lý Phòng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -332,9 +371,9 @@ namespace QLKS
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(64, 96);
+            this.label2.Location = new System.Drawing.Point(71, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 32);
+            this.label2.Size = new System.Drawing.Size(166, 40);
             this.label2.TabIndex = 1;
             this.label2.Text = "Số Phòng: ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -344,9 +383,9 @@ namespace QLKS
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(64, 128);
+            this.label3.Location = new System.Drawing.Point(71, 160);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 32);
+            this.label3.Size = new System.Drawing.Size(166, 40);
             this.label3.TabIndex = 2;
             this.label3.Text = "Loại Phòng: ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -356,9 +395,9 @@ namespace QLKS
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(64, 160);
+            this.label4.Location = new System.Drawing.Point(71, 200);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 32);
+            this.label4.Size = new System.Drawing.Size(166, 40);
             this.label4.TabIndex = 3;
             this.label4.Text = "Tình Trạng: ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -367,18 +406,20 @@ namespace QLKS
             // 
             this.textSoPhong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textSoPhong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSoPhong.Location = new System.Drawing.Point(217, 99);
+            this.textSoPhong.Location = new System.Drawing.Point(243, 124);
+            this.textSoPhong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textSoPhong.Name = "textSoPhong";
-            this.textSoPhong.Size = new System.Drawing.Size(375, 30);
+            this.textSoPhong.Size = new System.Drawing.Size(424, 35);
             this.textSoPhong.TabIndex = 5;
             // 
             // textTinhTrang
             // 
             this.textTinhTrang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textTinhTrang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTinhTrang.Location = new System.Drawing.Point(217, 163);
+            this.textTinhTrang.Location = new System.Drawing.Point(243, 204);
+            this.textTinhTrang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textTinhTrang.Name = "textTinhTrang";
-            this.textTinhTrang.Size = new System.Drawing.Size(375, 30);
+            this.textTinhTrang.Size = new System.Drawing.Size(424, 35);
             this.textTinhTrang.TabIndex = 6;
             // 
             // comboBoxLoaiPhong
@@ -387,9 +428,10 @@ namespace QLKS
             this.comboBoxLoaiPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLoaiPhong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxLoaiPhong.FormattingEnabled = true;
-            this.comboBoxLoaiPhong.Location = new System.Drawing.Point(217, 131);
+            this.comboBoxLoaiPhong.Location = new System.Drawing.Point(243, 164);
+            this.comboBoxLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxLoaiPhong.Name = "comboBoxLoaiPhong";
-            this.comboBoxLoaiPhong.Size = new System.Drawing.Size(375, 30);
+            this.comboBoxLoaiPhong.Size = new System.Drawing.Size(424, 35);
             this.comboBoxLoaiPhong.TabIndex = 7;
             this.comboBoxLoaiPhong.SelectedIndexChanged += new System.EventHandler(this.comboBoxLoaiPhong_SelectedIndexChanged);
             // 
@@ -405,20 +447,22 @@ namespace QLKS
             this.tableLayoutPanel3.Controls.Add(this.btn_Xoa, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.btn_Thoat, 3, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(217, 227);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(243, 284);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(375, 26);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(424, 32);
             this.tableLayoutPanel3.TabIndex = 9;
             // 
             // btn_Them
             // 
             this.btn_Them.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Them.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Them.Location = new System.Drawing.Point(3, 3);
+            this.btn_Them.Location = new System.Drawing.Point(3, 4);
+            this.btn_Them.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(87, 20);
+            this.btn_Them.Size = new System.Drawing.Size(100, 24);
             this.btn_Them.TabIndex = 0;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = true;
@@ -428,9 +472,10 @@ namespace QLKS
             // 
             this.btn_Sua.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Sua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sua.Location = new System.Drawing.Point(96, 3);
+            this.btn_Sua.Location = new System.Drawing.Point(109, 4);
+            this.btn_Sua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(87, 20);
+            this.btn_Sua.Size = new System.Drawing.Size(100, 24);
             this.btn_Sua.TabIndex = 1;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
@@ -440,9 +485,10 @@ namespace QLKS
             // 
             this.btn_Xoa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Xoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa.Location = new System.Drawing.Point(189, 3);
+            this.btn_Xoa.Location = new System.Drawing.Point(215, 4);
+            this.btn_Xoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(87, 20);
+            this.btn_Xoa.Size = new System.Drawing.Size(100, 24);
             this.btn_Xoa.TabIndex = 2;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = true;
@@ -452,12 +498,24 @@ namespace QLKS
             // 
             this.btn_Thoat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Thoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Thoat.Location = new System.Drawing.Point(282, 3);
+            this.btn_Thoat.Location = new System.Drawing.Point(321, 4);
+            this.btn_Thoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(90, 20);
+            this.btn_Thoat.Size = new System.Drawing.Size(100, 24);
             this.btn_Thoat.TabIndex = 3;
             this.btn_Thoat.Text = "Thoát";
             this.btn_Thoat.UseVisualStyleBackColor = true;
+            // 
+            // lbGiaTien
+            // 
+            this.lbGiaTien.AutoSize = true;
+            this.lbGiaTien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbGiaTien.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGiaTien.Location = new System.Drawing.Point(243, 240);
+            this.lbGiaTien.Name = "lbGiaTien";
+            this.lbGiaTien.Size = new System.Drawing.Size(424, 40);
+            this.lbGiaTien.TabIndex = 12;
+            this.lbGiaTien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridViewQLP
             // 
@@ -472,52 +530,15 @@ namespace QLKS
             this.Gia});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewQLP, 2);
             this.dataGridViewQLP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewQLP.Location = new System.Drawing.Point(3, 299);
+            this.dataGridViewQLP.Location = new System.Drawing.Point(3, 374);
+            this.dataGridViewQLP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewQLP.Name = "dataGridViewQLP";
             this.dataGridViewQLP.ReadOnly = true;
             this.dataGridViewQLP.RowHeadersWidth = 51;
             this.dataGridViewQLP.RowTemplate.Height = 24;
-            this.dataGridViewQLP.Size = new System.Drawing.Size(1059, 236);
+            this.dataGridViewQLP.Size = new System.Drawing.Size(1192, 294);
             this.dataGridViewQLP.TabIndex = 13;
             this.dataGridViewQLP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewQLP_CellClick);
-            // 
-            // lbGiaTien
-            // 
-            this.lbGiaTien.AutoSize = true;
-            this.lbGiaTien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbGiaTien.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGiaTien.Location = new System.Drawing.Point(217, 192);
-            this.lbGiaTien.Name = "lbGiaTien";
-            this.lbGiaTien.Size = new System.Drawing.Size(375, 32);
-            this.lbGiaTien.TabIndex = 12;
-            this.lbGiaTien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Loai
-            // 
-            this.Loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Loai.HeaderText = "Loại";
-            this.Loai.MinimumWidth = 6;
-            this.Loai.Name = "Loai";
-            this.Loai.ReadOnly = true;
-            this.Loai.Width = 64;
-            // 
-            // LoaiPhong
-            // 
-            this.LoaiPhong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.LoaiPhong.HeaderText = "Loại Phòng";
-            this.LoaiPhong.MinimumWidth = 6;
-            this.LoaiPhong.Name = "LoaiPhong";
-            this.LoaiPhong.ReadOnly = true;
-            this.LoaiPhong.Width = 109;
-            // 
-            // GiaTien
-            // 
-            this.GiaTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.GiaTien.HeaderText = "Giá TIền";
-            this.GiaTien.MinimumWidth = 6;
-            this.GiaTien.Name = "GiaTien";
-            this.GiaTien.ReadOnly = true;
-            this.GiaTien.Width = 91;
             // 
             // IDPhong
             // 
@@ -534,7 +555,7 @@ namespace QLKS
             this.SoPhong.MinimumWidth = 6;
             this.SoPhong.Name = "SoPhong";
             this.SoPhong.ReadOnly = true;
-            this.SoPhong.Width = 99;
+            this.SoPhong.Width = 115;
             // 
             // TìnhTrang
             // 
@@ -543,7 +564,7 @@ namespace QLKS
             this.TìnhTrang.MinimumWidth = 6;
             this.TìnhTrang.Name = "TìnhTrang";
             this.TìnhTrang.ReadOnly = true;
-            this.TìnhTrang.Width = 107;
+            this.TìnhTrang.Width = 120;
             // 
             // KieuPhong
             // 
@@ -563,11 +584,12 @@ namespace QLKS
             // 
             // QLPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 538);
+            this.ClientSize = new System.Drawing.Size(1198, 672);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "QLPhong";
             this.Text = "QLPhong";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
