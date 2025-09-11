@@ -63,4 +63,3 @@ D:\QLKS\QLKS\QLKS\obj\Debug\QLKS.csproj.GenerateResource.cache
 D:\QLKS\QLKS\QLKS\obj\Debug\QLKS.csproj.CoreCompileInputs.cache
 D:\QLKS\QLKS\QLKS\obj\Debug\QLKS.exe
 D:\QLKS\QLKS\QLKS\obj\Debug\QLKS.pdb
-D:\QLKS\QLKS\QLKS\obj\Debug\QLKS.QLKhach.resources
