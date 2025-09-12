@@ -52,7 +52,6 @@
             this.cboSoPhong = new System.Windows.Forms.ComboBox();
             this.txtCccd = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.cboTimKiem = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2.SuspendLayout();
@@ -319,18 +318,6 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
             // 
-            // cboTimKiem
-            // 
-            this.cboTimKiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboTimKiem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.tableLayoutPanel1.SetColumnSpan(this.cboTimKiem, 2);
-            this.cboTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboTimKiem.FormattingEnabled = true;
-            this.cboTimKiem.Location = new System.Drawing.Point(579, 3);
-            this.cboTimKiem.Name = "cboTimKiem";
-            this.cboTimKiem.Size = new System.Drawing.Size(453, 24);
-            this.cboTimKiem.TabIndex = 29;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 7;
@@ -363,7 +350,6 @@
             this.tableLayoutPanel1.Controls.Add(this.cboMaNV, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.cboLoaiPhong, 3, 6);
             this.tableLayoutPanel1.Controls.Add(this.cboSoPhong, 3, 7);
-            this.tableLayoutPanel1.Controls.Add(this.cboTimKiem, 4, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -445,7 +431,6 @@
         private System.Windows.Forms.ComboBox cboMaNV;
         private System.Windows.Forms.ComboBox cboLoaiPhong;
         private System.Windows.Forms.ComboBox cboSoPhong;
-        private System.Windows.Forms.ComboBox cboTimKiem;
         private System.Windows.Forms.DataGridView dataGridView;
     }
 }

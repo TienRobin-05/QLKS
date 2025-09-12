@@ -102,3 +102,23 @@ C:\Users\TienRobin\Desktop\QLKS\QLKS\bin\Debug\System.xml
 C:\Users\TienRobin\Desktop\QLKS\QLKS\obj\Debug\QLKS.csproj.CopyComplete
 C:\Users\TienRobin\Desktop\QLKS\QLKS\obj\Debug\QLKS.HoaDon.resources
 C:\Users\TienRobin\Desktop\QLKS\QLKS\obj\Debug\QLKS.ThongTinChiTiet.resources
+C:\The X-File\QLKS\QLKS\bin\Debug\QLKS.exe.config
+C:\The X-File\QLKS\QLKS\bin\Debug\QLKS.exe
+C:\The X-File\QLKS\QLKS\bin\Debug\QLKS.pdb
+C:\The X-File\QLKS\QLKS\bin\Debug\System.dll
+C:\The X-File\QLKS\QLKS\bin\Debug\System.xml
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.csproj.AssemblyReference.cache
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.DatPhong.resources
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.HoaDon.resources
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.Home.resources
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.Login.resources
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.Properties.Resources.resources
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.QLNhanVien.resources
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.QLPhong.resources
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.test.resources
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.ThongTinChiTiet.resources
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.csproj.GenerateResource.cache
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.csproj.CoreCompileInputs.cache
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.csproj.CopyComplete
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.exe
+C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.pdb

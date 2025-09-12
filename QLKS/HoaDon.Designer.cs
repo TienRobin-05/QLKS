@@ -30,6 +30,11 @@ namespace QLKS
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.IDPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTenKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,11 +50,6 @@ namespace QLKS
             this.comboBoxPTTT = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnHoaDon = new System.Windows.Forms.Button();
-            this.IDPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,50 @@ namespace QLKS
             this.dataGridView1.Size = new System.Drawing.Size(503, 294);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // IDPhong
+            // 
+            this.IDPhong.HeaderText = "ID";
+            this.IDPhong.MinimumWidth = 6;
+            this.IDPhong.Name = "IDPhong";
+            this.IDPhong.ReadOnly = true;
+            this.IDPhong.Width = 125;
+            // 
+            // HoTenKhach
+            // 
+            this.HoTenKhach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.HoTenKhach.HeaderText = "Họ Tên Khách Hàng";
+            this.HoTenKhach.MinimumWidth = 6;
+            this.HoTenKhach.Name = "HoTenKhach";
+            this.HoTenKhach.ReadOnly = true;
+            this.HoTenKhach.Width = 121;
+            // 
+            // SoPhong
+            // 
+            this.SoPhong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SoPhong.HeaderText = "Số Phòng";
+            this.SoPhong.MinimumWidth = 6;
+            this.SoPhong.Name = "SoPhong";
+            this.SoPhong.ReadOnly = true;
+            this.SoPhong.Width = 91;
+            // 
+            // NgayDatPhong
+            // 
+            this.NgayDatPhong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NgayDatPhong.HeaderText = "Ngày Đặt";
+            this.NgayDatPhong.MinimumWidth = 6;
+            this.NgayDatPhong.Name = "NgayDatPhong";
+            this.NgayDatPhong.ReadOnly = true;
+            this.NgayDatPhong.Width = 89;
+            // 
+            // GiaTien
+            // 
+            this.GiaTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.GiaTien.HeaderText = "Giá Mỗi Đêm";
+            this.GiaTien.MinimumWidth = 6;
+            this.GiaTien.Name = "GiaTien";
+            this.GiaTien.ReadOnly = true;
+            this.GiaTien.Width = 109;
             // 
             // label1
             // 
@@ -277,50 +321,6 @@ namespace QLKS
             this.btnHoaDon.Text = "Tạo Hóa Đơn";
             this.btnHoaDon.UseVisualStyleBackColor = true;
             this.btnHoaDon.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // IDPhong
-            // 
-            this.IDPhong.HeaderText = "ID";
-            this.IDPhong.MinimumWidth = 6;
-            this.IDPhong.Name = "IDPhong";
-            this.IDPhong.ReadOnly = true;
-            this.IDPhong.Width = 125;
-            // 
-            // HoTenKhach
-            // 
-            this.HoTenKhach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.HoTenKhach.HeaderText = "Họ Tên Khách Hàng";
-            this.HoTenKhach.MinimumWidth = 6;
-            this.HoTenKhach.Name = "HoTenKhach";
-            this.HoTenKhach.ReadOnly = true;
-            this.HoTenKhach.Width = 121;
-            // 
-            // SoPhong
-            // 
-            this.SoPhong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SoPhong.HeaderText = "Số Phòng";
-            this.SoPhong.MinimumWidth = 6;
-            this.SoPhong.Name = "SoPhong";
-            this.SoPhong.ReadOnly = true;
-            this.SoPhong.Width = 91;
-            // 
-            // NgayDatPhong
-            // 
-            this.NgayDatPhong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.NgayDatPhong.HeaderText = "Ngày Đặt";
-            this.NgayDatPhong.MinimumWidth = 6;
-            this.NgayDatPhong.Name = "NgayDatPhong";
-            this.NgayDatPhong.ReadOnly = true;
-            this.NgayDatPhong.Width = 89;
-            // 
-            // GiaTien
-            // 
-            this.GiaTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.GiaTien.HeaderText = "Giá Mỗi Đêm";
-            this.GiaTien.MinimumWidth = 6;
-            this.GiaTien.Name = "GiaTien";
-            this.GiaTien.ReadOnly = true;
-            this.GiaTien.Width = 109;
             // 
             // HoaDon
             // 
