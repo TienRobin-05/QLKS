@@ -82,5 +82,23 @@ namespace QLKS
         private void quảnLýKháchToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
+
+        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HoaDon hd = new HoaDon();
+            hd.MdiParent = this;
+            hd.WindowState = FormWindowState.Maximized;
+            hd.Show();
+            hd.BringToFront();
+        }
+
+        private void thôngTinChiTiếtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongTinChiTiet tt = new ThongTinChiTiet();
+            tt.MdiParent = this;
+            tt.WindowState = FormWindowState.Maximized;
+            tt.Show();
+            tt.BringToFront();
+        }
     }
 }

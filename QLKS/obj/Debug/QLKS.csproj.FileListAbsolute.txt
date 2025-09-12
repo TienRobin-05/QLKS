@@ -97,3 +97,8 @@ D:\herhe\QLKS\QLKS\obj\Debug\QLKS.csproj.CoreCompileInputs.cache
 D:\herhe\QLKS\QLKS\obj\Debug\QLKS.csproj.CopyComplete
 D:\herhe\QLKS\QLKS\obj\Debug\QLKS.exe
 D:\herhe\QLKS\QLKS\obj\Debug\QLKS.pdb
+C:\Users\TienRobin\Desktop\QLKS\QLKS\bin\Debug\System.dll
+C:\Users\TienRobin\Desktop\QLKS\QLKS\bin\Debug\System.xml
+C:\Users\TienRobin\Desktop\QLKS\QLKS\obj\Debug\QLKS.csproj.CopyComplete
+C:\Users\TienRobin\Desktop\QLKS\QLKS\obj\Debug\QLKS.HoaDon.resources
+C:\Users\TienRobin\Desktop\QLKS\QLKS\obj\Debug\QLKS.ThongTinChiTiet.resources
