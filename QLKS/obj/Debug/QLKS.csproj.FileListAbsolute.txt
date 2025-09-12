@@ -63,3 +63,19 @@ D:\QLKS\QLKS\QLKS\obj\Debug\QLKS.csproj.GenerateResource.cache
 D:\QLKS\QLKS\QLKS\obj\Debug\QLKS.csproj.CoreCompileInputs.cache
 D:\QLKS\QLKS\QLKS\obj\Debug\QLKS.exe
 D:\QLKS\QLKS\QLKS\obj\Debug\QLKS.pdb
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\bin\Debug\QLKS.exe.config
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\bin\Debug\QLKS.exe
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\bin\Debug\QLKS.pdb
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.csproj.AssemblyReference.cache
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.exe.config
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.DatPhong.resources
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.Home.resources
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.Login.resources
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.Properties.Resources.resources
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.QLNhanVien.resources
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.QLPhong.resources
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.test.resources
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.csproj.GenerateResource.cache
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.csproj.CoreCompileInputs.cache
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.exe
+C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.pdb
