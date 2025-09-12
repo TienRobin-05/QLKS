@@ -79,3 +79,21 @@ C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.csproj
 C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.csproj.CoreCompileInputs.cache
 C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.exe
 C:\Users\Hi ASUS TUF\Documents\Thư mục mới\QLKS\QLKS\obj\Debug\QLKS.pdb
+D:\herhe\QLKS\QLKS\bin\Debug\QLKS.exe.config
+D:\herhe\QLKS\QLKS\bin\Debug\QLKS.exe
+D:\herhe\QLKS\QLKS\bin\Debug\QLKS.pdb
+D:\herhe\QLKS\QLKS\bin\Debug\System.dll
+D:\herhe\QLKS\QLKS\bin\Debug\System.xml
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.csproj.AssemblyReference.cache
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.DatPhong.resources
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.Home.resources
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.Login.resources
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.Properties.Resources.resources
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.QLNhanVien.resources
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.QLPhong.resources
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.test.resources
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.csproj.GenerateResource.cache
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.csproj.CoreCompileInputs.cache
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.csproj.CopyComplete
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.exe
+D:\herhe\QLKS\QLKS\obj\Debug\QLKS.pdb
