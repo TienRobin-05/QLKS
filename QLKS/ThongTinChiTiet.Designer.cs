@@ -53,32 +53,34 @@ namespace QLKS
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tableLayoutPanel1.Controls.Add(this.btnTimKiem, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtTimKiem, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dataGridViewThongTin, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.89655F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.10345F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 245F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 327F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1138, 699);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 306F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 409F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1486, 874);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTimKiem.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(949, 75);
+            this.btnTimKiem.Location = new System.Drawing.Point(1273, 94);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(136, 48);
+            this.btnTimKiem.Size = new System.Drawing.Size(154, 60);
             this.btnTimKiem.TabIndex = 0;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -87,9 +89,10 @@ namespace QLKS
             // txtTimKiem
             // 
             this.txtTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTimKiem.Location = new System.Drawing.Point(53, 75);
+            this.txtTimKiem.Location = new System.Drawing.Point(59, 94);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(890, 22);
+            this.txtTimKiem.Size = new System.Drawing.Size(1208, 26);
             this.txtTimKiem.TabIndex = 1;
             // 
             // label1
@@ -100,7 +103,7 @@ namespace QLKS
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1132, 72);
+            this.label1.Size = new System.Drawing.Size(1480, 90);
             this.label1.TabIndex = 2;
             this.label1.Text = "Thông Tin Chi Tiết";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -125,13 +128,14 @@ namespace QLKS
             this.TongTien});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewThongTin, 4);
             this.dataGridViewThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewThongTin.Location = new System.Drawing.Point(3, 129);
+            this.dataGridViewThongTin.Location = new System.Drawing.Point(3, 162);
+            this.dataGridViewThongTin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewThongTin.Name = "dataGridViewThongTin";
             this.dataGridViewThongTin.ReadOnly = true;
             this.dataGridViewThongTin.RowHeadersWidth = 51;
             this.tableLayoutPanel1.SetRowSpan(this.dataGridViewThongTin, 2);
             this.dataGridViewThongTin.RowTemplate.Height = 24;
-            this.dataGridViewThongTin.Size = new System.Drawing.Size(1132, 567);
+            this.dataGridViewThongTin.Size = new System.Drawing.Size(1480, 708);
             this.dataGridViewThongTin.TabIndex = 3;
             // 
             // TenKhach
@@ -141,7 +145,7 @@ namespace QLKS
             this.TenKhach.MinimumWidth = 6;
             this.TenKhach.Name = "TenKhach";
             this.TenKhach.ReadOnly = true;
-            this.TenKhach.Width = 132;
+            this.TenKhach.Width = 151;
             // 
             // Sdt
             // 
@@ -150,7 +154,7 @@ namespace QLKS
             this.Sdt.MinimumWidth = 6;
             this.Sdt.Name = "Sdt";
             this.Sdt.ReadOnly = true;
-            this.Sdt.Width = 98;
+            this.Sdt.Width = 112;
             // 
             // Email
             // 
@@ -159,7 +163,7 @@ namespace QLKS
             this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
-            this.Email.Width = 71;
+            this.Email.Width = 84;
             // 
             // Cccd
             // 
@@ -168,7 +172,7 @@ namespace QLKS
             this.Cccd.MinimumWidth = 6;
             this.Cccd.Name = "Cccd";
             this.Cccd.ReadOnly = true;
-            this.Cccd.Width = 127;
+            this.Cccd.Width = 148;
             // 
             // LoaiPhong
             // 
@@ -177,6 +181,7 @@ namespace QLKS
             this.LoaiPhong.MinimumWidth = 6;
             this.LoaiPhong.Name = "LoaiPhong";
             this.LoaiPhong.ReadOnly = true;
+            this.LoaiPhong.Width = 116;
             // 
             // SoPhong
             // 
@@ -185,7 +190,7 @@ namespace QLKS
             this.SoPhong.MinimumWidth = 6;
             this.SoPhong.Name = "SoPhong";
             this.SoPhong.ReadOnly = true;
-            this.SoPhong.Width = 93;
+            this.SoPhong.Width = 109;
             // 
             // TenNhanVien
             // 
@@ -194,7 +199,7 @@ namespace QLKS
             this.TenNhanVien.MinimumWidth = 6;
             this.TenNhanVien.Name = "TenNhanVien";
             this.TenNhanVien.ReadOnly = true;
-            this.TenNhanVien.Width = 99;
+            this.TenNhanVien.Width = 114;
             // 
             // MaNV
             // 
@@ -203,7 +208,7 @@ namespace QLKS
             this.MaNV.MinimumWidth = 6;
             this.MaNV.Name = "MaNV";
             this.MaNV.ReadOnly = true;
-            this.MaNV.Width = 56;
+            this.MaNV.Width = 67;
             // 
             // NgayDat
             // 
@@ -212,7 +217,7 @@ namespace QLKS
             this.NgayDat.MinimumWidth = 6;
             this.NgayDat.Name = "NgayDat";
             this.NgayDat.ReadOnly = true;
-            this.NgayDat.Width = 129;
+            this.NgayDat.Width = 148;
             // 
             // NgayTra
             // 
@@ -221,7 +226,7 @@ namespace QLKS
             this.NgayTra.MinimumWidth = 6;
             this.NgayTra.Name = "NgayTra";
             this.NgayTra.ReadOnly = true;
-            this.NgayTra.Width = 129;
+            this.NgayTra.Width = 145;
             // 
             // PTTT
             // 
@@ -230,7 +235,7 @@ namespace QLKS
             this.PTTT.MinimumWidth = 6;
             this.PTTT.Name = "PTTT";
             this.PTTT.ReadOnly = true;
-            this.PTTT.Width = 89;
+            this.PTTT.Width = 102;
             // 
             // TongTien
             // 
@@ -239,14 +244,15 @@ namespace QLKS
             this.TongTien.MinimumWidth = 6;
             this.TongTien.Name = "TongTien";
             this.TongTien.ReadOnly = true;
-            this.TongTien.Width = 94;
+            this.TongTien.Width = 107;
             // 
             // ThongTinChiTiet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1138, 699);
+            this.ClientSize = new System.Drawing.Size(1486, 874);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ThongTinChiTiet";
             this.Text = "ThongTinChiTiet";
             this.Load += new System.EventHandler(this.ThongTinChiTiet_Load);

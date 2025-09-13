@@ -217,14 +217,100 @@ FROM     Phong INNER JOIN
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            Lenh = @"DELETE FROM Phong
-                     WHERE  (IDPhong = @Original_IDPhong)";
-            ThucHien = new SqlCommand(Lenh, KetNoi);
-            ThucHien.Parameters.Add("@Original_IDPhong", SqlDbType.Int).Value = dataGridViewQLP.CurrentRow.Cells[0].Value;
-            KetNoi.Open();
-            ThucHien.ExecuteNonQuery();
-            KetNoi.Close();
+            // 1. lấy ID phòng được chọn
+            if (dataGridViewQLP.CurrentRow == null)  // chưa chọn dòng
+            {
+                MessageBox.Show("Hãy chọn phòng cần xóa.");
+                return;
+            }
+
+            object cellValue = dataGridViewQLP.CurrentRow.Cells["IDPhong"].Value;
+            if (cellValue == null || !int.TryParse(cellValue.ToString(), out int idPhong))
+            {
+                MessageBox.Show("ID phòng không hợp lệ.");
+                return;
+            }
+
+            // 2. Hỏi người dùng có chắc chắn xóa không
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa phòng này?",
+                                "Xác nhận xóa",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
+
+            // 3. Thực hiện xóa trong database
+            string connStr = "Data Source=.;Initial Catalog=QLKS;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connStr))
+            using (SqlCommand cmd = new SqlCommand("DELETE FROM Phong WHERE IDPhong = @id", conn))
+            {
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = idPhong;
+                try
+                {
+                    conn.Open();
+                    int rows = cmd.ExecuteNonQuery();
+
+                    // 4. Thông báo kết quả
+                    MessageBox.Show(rows > 0 ? "Xóa thành công!" : "Không tìm thấy phòng để xóa.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xóa: " + ex.Message);
+                }
+            }
             HienThi();
+
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            // lấy giá trị số phòng cần tìm
+            string soPhongCanTim = textBoxTK.Text.Trim();
+
+            // nếu người dùng không nhập gì -> hiển thị toàn bộ
+            if (string.IsNullOrWhiteSpace(soPhongCanTim))
+            {
+                HienThi();
+                return;
+            }
+
+            dataGridViewQLP.Rows.Clear();
+
+            // lay du lieu tu sql
+            Lenh = @"SELECT Phong.IDPhong, Phong.SoPhong, Phong.TinhTrang,
+                    KieuPhong.LoaiPhong, KieuPhong.GiaTien
+             FROM Phong
+             INNER JOIN KieuPhong ON Phong.IDLoaiPhong = KieuPhong.IDLoaiPhong
+             WHERE Phong.SoPhong = @SoPhong";   // tìm chính xác
+
+            ThucHien = new SqlCommand(Lenh, KetNoi);
+            ThucHien.Parameters.Add("@SoPhong", SqlDbType.Int).Value = int.Parse(soPhongCanTim);
+
+            KetNoi.Open();
+            Doc = ThucHien.ExecuteReader();
+
+            int i = 0;
+            while (Doc.Read())
+            {
+                dataGridViewQLP.Rows.Add();
+                dataGridViewQLP.Rows[i].Cells[0].Value = Doc[0];
+                dataGridViewQLP.Rows[i].Cells[1].Value = Doc[1];
+                dataGridViewQLP.Rows[i].Cells[2].Value = Doc[2];
+                dataGridViewQLP.Rows[i].Cells[3].Value = Doc[3];
+                dataGridViewQLP.Rows[i].Cells[4].Value = Doc[4];
+                dataGridViewQLP.Columns[0].Visible = false;
+                i++;
+            }
+            KetNoi.Close();
+        }
+
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_KP_Thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -139,7 +139,6 @@ namespace QLKS
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            TimKiemTheoTenKhach();
         }
     }
 }

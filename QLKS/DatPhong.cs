@@ -90,24 +90,24 @@ namespace QLKS
                 WHERE dp.IsDeleted = 0;
             ");
 
-            dataGridView.DataSource = dt;
+            dataGridViewDP.DataSource = dt;
 
             // Đặt tiêu đề có dấu cho cột
-            dataGridView.Columns["STT"].HeaderText = "STT";
-            dataGridView.Columns["HoTen"].HeaderText = "Tên Khách";
-            dataGridView.Columns["SoDienThoai"].HeaderText = "Số Điện Thoại";
-            dataGridView.Columns["Email"].HeaderText = "Email";
-            dataGridView.Columns["Cccd"].HeaderText = "CCCD";
-            dataGridView.Columns["SoPhong"].HeaderText = "Số Phòng";
-            dataGridView.Columns["LoaiPhong"].HeaderText = "Loại Phòng";
-            dataGridView.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
+            dataGridViewDP.Columns["STT"].HeaderText = "STT";
+            dataGridViewDP.Columns["HoTen"].HeaderText = "Tên Khách";
+            dataGridViewDP.Columns["SoDienThoai"].HeaderText = "Số Điện Thoại";
+            dataGridViewDP.Columns["Email"].HeaderText = "Email";
+            dataGridViewDP.Columns["Cccd"].HeaderText = "CCCD";
+            dataGridViewDP.Columns["SoPhong"].HeaderText = "Số Phòng";
+            dataGridViewDP.Columns["LoaiPhong"].HeaderText = "Loại Phòng";
+            dataGridViewDP.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
 
             // Ẩn các cột ID nếu không muốn hiển thị
-            dataGridView.Columns["IDDatPhong"].Visible = false;
-            dataGridView.Columns["IDKhach"].Visible = false;
-            dataGridView.Columns["IDNhanVien"].Visible = false;
-            dataGridView.Columns["IDPhong"].Visible = false;
-            dataGridView.Columns["IDLoaiPhong"].Visible = false;
+            dataGridViewDP.Columns["IDDatPhong"].Visible = false;
+            dataGridViewDP.Columns["IDKhach"].Visible = false;
+            dataGridViewDP.Columns["IDNhanVien"].Visible = false;
+            dataGridViewDP.Columns["IDPhong"].Visible = false;
+            dataGridViewDP.Columns["IDLoaiPhong"].Visible = false;
         }
 
         private void DatPhong_Load(object sender, EventArgs e)
@@ -151,14 +151,14 @@ namespace QLKS
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if(dataGridView.CurrentRow == null)
+            if(dataGridViewDP.CurrentRow == null)
             {
                 MessageBox.Show("Vui lòng chọn bản ghi cần sửa!");
                 return;
             }
 
             // Lấy IDDatPhong từ dòng chọn
-            int idDatPhong = Convert.ToInt32(dataGridView.CurrentRow.Cells["IDDatPhong"].Value);
+            int idDatPhong = Convert.ToInt32(dataGridViewDP.CurrentRow.Cells["IDDatPhong"].Value);
 
             string hoVaTen = txtKhach.Text.Trim();
             string sdt = txtsdt.Text.Trim();
@@ -220,7 +220,7 @@ namespace QLKS
         {
             if (e.RowIndex < 0) return;
 
-            DataGridViewRow row = dataGridView.Rows[e.RowIndex];
+            DataGridViewRow row = dataGridViewDP.Rows[e.RowIndex];
 
             // Gán dữ liệu vào TextBox
             txtKhach.Text = row.Cells["HoTen"].Value?.ToString();   // cột HoTen (hoặc HoTenDem + Ten)
@@ -241,7 +241,7 @@ namespace QLKS
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (dataGridView.CurrentRow == null)
+            if (dataGridViewDP.CurrentRow == null)
             {
                 MessageBox.Show("Vui lòng chọn bản ghi cần xóa!");
                 return;
@@ -256,8 +256,8 @@ namespace QLKS
                 return;
 
             // Lấy IDDatPhong và IDPhong từ dòng chọn
-            int idDatPhong = Convert.ToInt32(dataGridView.CurrentRow.Cells["IDDatPhong"].Value);
-            int idPhong = Convert.ToInt32(dataGridView.CurrentRow.Cells["IDPhong"].Value);
+            int idDatPhong = Convert.ToInt32(dataGridViewDP.CurrentRow.Cells["IDDatPhong"].Value);
+            int idPhong = Convert.ToInt32(dataGridViewDP.CurrentRow.Cells["IDPhong"].Value);
 
             // 1. Đánh dấu xóa trong DatPhong
             string sqlXoa = $@"
@@ -281,5 +281,37 @@ namespace QLKS
             HienThi();
         }
 
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            DataTable dt = db.GetData($@"
+        SELECT 
+        dp.IDDatPhong,
+        dp.IDKhach,
+        dp.IDNhanVien,
+        dp.IDPhong,
+        p.IDLoaiPhong,
+        ROW_NUMBER() OVER (ORDER BY dp.IDDatPhong) AS STT,
+        k.HoTenDem + ' ' + k.Ten AS HoTen,
+        k.Sdt AS SoDienThoai,
+        k.Email,
+        k.Cccd,
+        nv.MaNV,
+        lp.LoaiPhong,
+        p.SoPhong
+    FROM DatPhong dp
+    LEFT JOIN Khach k ON dp.IDKhach = k.IDKhach
+    LEFT JOIN Phong p ON dp.IDPhong = p.IDPhong
+    LEFT JOIN KieuPhong lp ON p.IDLoaiPhong = lp.IDLoaiPhong
+    LEFT JOIN NhanVien nv ON dp.IDNhanVien = nv.IDNhanVien
+    WHERE dp.IsDeleted = 0 AND p.SoPhong = {textBoxTK.Text};
+");
+
+            dataGridViewDP.DataSource = dt;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -122,3 +122,19 @@ C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.csproj.CoreCompileInputs.cache
 C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.csproj.CopyComplete
 C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.exe
 C:\The X-File\QLKS\QLKS\obj\Debug\QLKS.pdb
+D:\qlks-12\QLKS\QLKS\bin\Debug\QLKS.exe.config
+D:\qlks-12\QLKS\QLKS\bin\Debug\QLKS.exe
+D:\qlks-12\QLKS\QLKS\bin\Debug\QLKS.pdb
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.csproj.AssemblyReference.cache
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.DatPhong.resources
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.HoaDon.resources
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.Home.resources
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.Login.resources
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.Properties.Resources.resources
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.QLNhanVien.resources
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.QLPhong.resources
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.ThongTinChiTiet.resources
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.csproj.GenerateResource.cache
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.csproj.CoreCompileInputs.cache
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.exe
+D:\qlks-12\QLKS\QLKS\obj\Debug\QLKS.pdb

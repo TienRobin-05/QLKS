@@ -123,15 +123,93 @@ WHERE  (IDNhanVien = @Original_IDNhanVien)";
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            Lenh = @"UPDATE NhanVien
-                    SET IsDeleted = 1
-                    WHERE IDNhanVien = @Original_IDNhanVien;";
-            ThucHien = new SqlCommand(Lenh, KetNoi);
-            ThucHien.Parameters.Add("@Original_IDNhanVien", SqlDbType.Int).Value = dataGridViewQLNV.CurrentRow.Cells[0].Value;
-            KetNoi.Open();
-            ThucHien.ExecuteNonQuery();
-            KetNoi.Close();
+            // ===== 1. Kiểm tra lựa chọn và lấy ID =====
+            if (dataGridViewQLNV.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên cần xóa.");
+                return;
+            }
+
+            object value = dataGridViewQLNV.CurrentRow.Cells[0].Value;
+            if (value == null || !int.TryParse(value.ToString(), out int idNhanVien))
+            {
+                MessageBox.Show("ID nhân viên không hợp lệ.");
+                return;
+            }
+
+            // ===== 2. Xác nhận người dùng =====
+            DialogResult kq = MessageBox.Show(
+                "Bạn có chắc chắn muốn xóa nhân viên này?",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (kq != DialogResult.Yes) return;
+
+            // ===== 3. Xóa cứng trong database =====
+            string connStr = "Data Source=.;Initial Catalog=QLKS;Integrated Security=True";
+
+            using (SqlConnection conn = new SqlConnection(connStr))
+            using (SqlCommand cmd = new SqlCommand(
+                "DELETE FROM NhanVien WHERE IDNhanVien = @ID", conn))
+            {
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = idNhanVien;
+
+                try
+                {
+                    conn.Open();
+                    int rows = cmd.ExecuteNonQuery();
+
+                    if (rows > 0)
+                        MessageBox.Show("Đã xóa nhân viên thành công!");
+                    else
+                        MessageBox.Show("Không tìm thấy nhân viên để xóa.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xóa: " + ex.Message);
+                }
+            }
+
+            // ===== 4. Cập nhật lại danh sách nhân viên =====
             HienThi();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            // lấy mã nhân viên cần tìm
+            string maNVCanTim = textBoxTK.Text.Trim();
+
+            dataGridViewQLNV.Rows.Clear();
+
+            Lenh = @"SELECT IDNhanVien, HoTenDem, Ten, MaNV, Sdt
+             FROM NhanVien
+             WHERE IsDeleted = 0 AND MaNV LIKE @MaNV";
+
+            ThucHien = new SqlCommand(Lenh, KetNoi);
+
+            // nếu LIKE: thêm ký tự % để tìm gần đúng
+            ThucHien.Parameters.Add("@MaNV", SqlDbType.NVarChar).Value = "%" + maNVCanTim + "%";
+
+            KetNoi.Open();
+            Doc = ThucHien.ExecuteReader();
+            int i = 0;
+            while (Doc.Read())
+            {
+                dataGridViewQLNV.Rows.Add();
+                dataGridViewQLNV.Rows[i].Cells[0].Value = Doc[0];
+                dataGridViewQLNV.Rows[i].Cells[1].Value = Doc[1];
+                dataGridViewQLNV.Rows[i].Cells[2].Value = Doc[2];
+                dataGridViewQLNV.Rows[i].Cells[3].Value = Doc[3];
+                dataGridViewQLNV.Rows[i].Cells[4].Value = Doc[4];
+                i++;
+            }
+            KetNoi.Close();
+        }
+
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
