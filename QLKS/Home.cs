@@ -24,20 +24,14 @@ namespace QLKS
 
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
-            DatPhong dp = new DatPhong();
-            dp.Show();
         }
 
         private void btnQLP_Click(object sender, EventArgs e)
         {
-            QLPhong p = new QLPhong();
-            p.Show();
         }
 
         private void btnQLNV_Click(object sender, EventArgs e)
         {
-            QLNhanVien nv = new QLNhanVien();
-            nv.Show();
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -76,7 +70,7 @@ namespace QLKS
             qlnv.MdiParent = this;
             qlnv.WindowState = FormWindowState.Maximized;
             qlnv.Show();
-            qlnv.BringToFront();
+            qlnv.BringToFront(); //dua form vua mo len tren cung
         }
 
         private void quảnLýKháchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -99,6 +93,15 @@ namespace QLKS
             tt.WindowState = FormWindowState.Maximized;
             tt.Show();
             tt.BringToFront();
+        }
+
+        private void tưVấnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TuVan tv = new TuVan();
+            tv.MdiParent = this;
+            tv.WindowState = FormWindowState.Maximized;
+            tv.Show();
+            tv.BringToFront();
         }
     }
 }

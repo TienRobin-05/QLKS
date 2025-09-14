@@ -20,22 +20,22 @@ namespace QLKS
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string hoVaTen = txtKhach.Text.Trim();
-            string sdt = txtsdt.Text.Trim();
-            string email = txtEmail.Text.Trim();
-            string cccd = txtCccd.Text.Trim();
+            string hoVaTen = txtKhach.Text.Trim(); // lấy và cắt khoảng trắng tên khách
+            string sdt = txtsdt.Text.Trim(); // lấy sdt
+            string email = txtEmail.Text.Trim(); // lấy email
+            string cccd = txtCccd.Text.Trim(); // Lấy CCCD
 
-            // Lấy ID từ combobox
+            // lấy ID từ combobox
             int idNhanVien = (cboMaNV.SelectedValue != null) ? Convert.ToInt32(cboMaNV.SelectedValue) : 0;
             int idLoaiPhong = (cboLoaiPhong.SelectedValue != null) ? Convert.ToInt32(cboLoaiPhong.SelectedValue) : 0;
             int idPhong = (cboSoPhong.SelectedValue != null) ? Convert.ToInt32(cboSoPhong.SelectedValue) : 0;
 
-            // Tách họ và tên
+            // tách họ và tên
             string[] parts = hoVaTen.Split(' ');
             string ten = parts[parts.Length - 1];
             string hoTenDem = string.Join(" ", parts, 0, parts.Length - 1);
 
-            // 1. Thêm khách mới + lấy ID vừa thêm
+            // thêm khách mới + lấy ID vừa thêm
             string sqlThemKhach = $@"
                 INSERT INTO Khach (HoTenDem, Ten, Sdt, Email, Cccd, IsDeleted) 
                 VALUES (N'{hoTenDem}', N'{ten}', '{sdt}', '{email}', '{cccd}', 0);
@@ -49,14 +49,14 @@ namespace QLKS
 
 
 
-            // 2. Thêm vào bảng đặt phòng
+            // thêm vào bảng đặt phòng
             string sqlDatPhong = $@"
                 INSERT INTO DatPhong (IDKhach, IDNhanVien, IDPhong, NgayDat, NgayTra, IsDeleted)
                 VALUES ({idKhach}, {idNhanVien}, {idPhong}, GETDATE(), DATEADD(DAY, 1, GETDATE()), 0)
             ";
             db.Command(sqlDatPhong);
 
-            // 3. Cập nhật trạng thái phòng thành "Đang thuê"
+            // cập nhật trạng thái phòng thành "dang thuê"
             string sqlCapNhatPhong = $@"
                 UPDATE Phong SET TinhTrang = N'Đang thuê' WHERE IDPhong = {idPhong}
             ";
@@ -95,7 +95,7 @@ namespace QLKS
 
             dataGridViewDP.DataSource = dt;
 
-            // Đặt tiêu đề có dấu cho cột
+            // dặt tiêu đề có dấu cho cột
             dataGridViewDP.Columns["STT"].HeaderText = "STT";
             dataGridViewDP.Columns["HoTen"].HeaderText = "Tên Khách";
             dataGridViewDP.Columns["SoDienThoai"].HeaderText = "Số Điện Thoại";
@@ -105,7 +105,7 @@ namespace QLKS
             dataGridViewDP.Columns["LoaiPhong"].HeaderText = "Loại Phòng";
             dataGridViewDP.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
 
-            // Ẩn các cột ID nếu không muốn hiển thị
+            // ẩn các cột ID nếu không muốn hiển thị
             dataGridViewDP.Columns["IDDatPhong"].Visible = false;
             dataGridViewDP.Columns["IDKhach"].Visible = false;
             dataGridViewDP.Columns["IDNhanVien"].Visible = false;
@@ -117,27 +117,27 @@ namespace QLKS
         {
             var danhSachMaNV = db.GetData(@"
                 SELECT IDNhanVien, MaNV FROM NhanVien WHERE IsDeleted = 0
-            ");
-            cboMaNV.DataSource = danhSachMaNV;
-            cboMaNV.DisplayMember = "MaNV";      
-            cboMaNV.ValueMember = "IDNhanVien";
+            "); // lấy danh sách nhân viên chưa xóa
+            cboMaNV.DataSource = danhSachMaNV; // gán vào combobox mã nv
+            cboMaNV.DisplayMember = "MaNV";  // Hiển thị Mã NV
+            cboMaNV.ValueMember = "IDNhanVien"; // giá trị ẩn là ID nhân viên
             HienThi();
             var danhSachLoaiPhong = db.GetData(
                 "SELECT IDLoaiPhong, LoaiPhong\r\nFROM KieuPhong;"
-                );
-            cboLoaiPhong.DataSource = danhSachLoaiPhong;
-            cboLoaiPhong.DisplayMember = "LoaiPhong";
-            cboLoaiPhong.ValueMember = "IDLoaiPhong";
+                );  // lấy danh sách loại phòng
+            cboLoaiPhong.DataSource = danhSachLoaiPhong; // gán vào combobox loại phòng
+            cboLoaiPhong.DisplayMember = "LoaiPhong"; // hiển thị tên loại phòng
+            cboLoaiPhong.ValueMember = "IDLoaiPhong"; // giá trị ẩn là ID loại phòng
         }
 
         private void cboLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboLoaiPhong.SelectedValue == null || cboLoaiPhong.SelectedValue is DataRowView)
-                return;
+                return; // chưa gán gti thi thoát
 
             int idLoaiPhong;
             if (!int.TryParse(cboLoaiPhong.SelectedValue.ToString(), out idLoaiPhong))
-                return;
+                return; //uyển sang int nếu ko đc thì thoát
 
             var danhachPhong = db.GetData($@"
                     SELECT IDPhong, SoPhong, TinhTrang
@@ -145,7 +145,8 @@ namespace QLKS
                     WHERE IsDeleted = 0
                       AND IDLoaiPhong = {idLoaiPhong}
                       AND TinhTrang != 'DANG_THUE'
-                ");
+                "); // lấy danh sách phòng thuộc loại này và chưa thuê
+
 
             cboSoPhong.DataSource = danhachPhong;
             cboSoPhong.DisplayMember = "SoPhong";
@@ -307,7 +308,7 @@ namespace QLKS
     LEFT JOIN KieuPhong lp ON p.IDLoaiPhong = lp.IDLoaiPhong
     LEFT JOIN NhanVien nv ON dp.IDNhanVien = nv.IDNhanVien
     WHERE dp.IsDeleted = 0 AND p.SoPhong = {textBoxTK.Text};
-");
+"); // lọc theo số phòng nhập trong textBoxTK
 
             dataGridViewDP.DataSource = dt;
         }
