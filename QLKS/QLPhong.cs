@@ -94,6 +94,9 @@ FROM     Phong INNER JOIN
         {
             KetNoi = new SqlConnection(Nguon);
             comboBoxLoaiPhong.Items.Clear();
+            comboBoxTinhTrang.Items.Clear();
+            comboBoxTinhTrang.Items.Add("Trống");
+            comboBoxTinhTrang.Items.Add("Bảo trì");
             Lenh = @"SELECT LoaiPhong, GiaTien
                     FROM     KieuPhong";
             ThucHien = new SqlCommand(Lenh, KetNoi);
@@ -168,7 +171,6 @@ FROM     Phong INNER JOIN
             ThucHien.Parameters.Add("@Phong", SqlDbType.NVarChar).Value = comboBoxLoaiPhong.Text;
             KetNoi.Open();
             Doc = ThucHien.ExecuteReader();
-            int i = 0;
             while (Doc.Read())
             {
                 lbGiaTien.Text = "Giá Tiền: " + Doc["GiaTien"].ToString() + " VND/Đêm";
@@ -184,7 +186,7 @@ FROM     Phong INNER JOIN
                     VALUES (@SoPhong,@IDLoaiPhong,@TinhTrang)";
             ThucHien = new SqlCommand(Lenh, KetNoi);
             ThucHien.Parameters.Add("@SoPhong", SqlDbType.Int).Value = int.Parse(textSoPhong.Text);
-            ThucHien.Parameters.Add("@TinhTrang", SqlDbType.NVarChar).Value = textTinhTrang.Text;
+            ThucHien.Parameters.Add("@TinhTrang", SqlDbType.NVarChar).Value = comboBoxTinhTrang.SelectedItem.ToString();
             ThucHien.Parameters.Add("@IDLoaiPhong", SqlDbType.Int).Value = ID_LoaiPhong;
             KetNoi.Open();
             ThucHien.ExecuteNonQuery();
@@ -199,7 +201,7 @@ FROM     Phong INNER JOIN
                      WHERE  (IDPhong = @Original_IDPhong)";
             ThucHien = new SqlCommand(Lenh, KetNoi);
             ThucHien.Parameters.Add("@SoPhong", SqlDbType.Int).Value = int.Parse(textSoPhong.Text);
-            ThucHien.Parameters.Add("@TinhTrang", SqlDbType.NVarChar).Value = textTinhTrang.Text;
+            ThucHien.Parameters.Add("@TinhTrang", SqlDbType.NVarChar).Value = comboBoxTinhTrang.SelectedItem.ToString();
             ThucHien.Parameters.Add("@IDLoaiPhong", SqlDbType.Int).Value = ID_LoaiPhong;
             ThucHien.Parameters.Add("@Original_IDPhong", SqlDbType.Int).Value = dataGridViewQLP.CurrentRow.Cells[0].Value;
             KetNoi.Open();
@@ -212,7 +214,7 @@ FROM     Phong INNER JOIN
         {
             comboBoxLoaiPhong.Text = dataGridViewQLP.CurrentRow.Cells[3].Value.ToString();
             textSoPhong.Text = dataGridViewQLP.CurrentRow.Cells[1].Value.ToString();
-            textTinhTrang.Text = dataGridViewQLP.CurrentRow.Cells[2].Value.ToString();
+            comboBoxTinhTrang.Text = dataGridViewQLP.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)

@@ -134,7 +134,7 @@ namespace QLKS
 
                 // 3. insert hóa đơn
                 decimal tongTien = decimal.Parse(lbTongTien.Text.Replace(" VND", "").Replace(",", ""));
-                Lenh = @"INSERT INTO HoaDon(IDDatPhong, TongTien, PhuongThucThanhToan, IsDeleted)
+                Lenh = @"INSERT INTO HoaDon(IDDatPhong, TongTien, PhuongThucThanhToan)
                          VALUES(@IDDatPhong, @TongTien, @PTTT)";
                 ThucHien = new SqlCommand(Lenh, KetNoi, tran);
                 ThucHien.Parameters.Add("@IDDatPhong", SqlDbType.Int).Value = currentIDDatPhong;

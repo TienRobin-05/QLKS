@@ -55,10 +55,10 @@ namespace QLKS
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel1.Controls.Add(this.btnTimKiem, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtTimKiem, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
@@ -67,25 +67,23 @@ namespace QLKS
             this.tableLayoutPanel1.Controls.Add(this.button1, 3, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 306F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 390F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1486, 874);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 218F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1321, 699);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTimKiem.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(1226, 96);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnTimKiem.Location = new System.Drawing.Point(1091, 95);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(143, 38);
+            this.btnTimKiem.Size = new System.Drawing.Size(126, 40);
             this.btnTimKiem.TabIndex = 0;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -95,10 +93,9 @@ namespace QLKS
             // 
             this.txtTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTimKiem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(59, 96);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTimKiem.Location = new System.Drawing.Point(53, 95);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(1161, 44);
+            this.txtTimKiem.Size = new System.Drawing.Size(1032, 38);
             this.txtTimKiem.TabIndex = 1;
             // 
             // label1
@@ -109,7 +106,7 @@ namespace QLKS
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1480, 92);
+            this.label1.Size = new System.Drawing.Size(1315, 92);
             this.label1.TabIndex = 2;
             this.label1.Text = "Thống Kê Doanh Thu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -134,14 +131,13 @@ namespace QLKS
             this.TongTien});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewThongTin, 4);
             this.dataGridViewThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewThongTin.Location = new System.Drawing.Point(3, 142);
-            this.dataGridViewThongTin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridViewThongTin.Location = new System.Drawing.Point(3, 141);
             this.dataGridViewThongTin.Name = "dataGridViewThongTin";
             this.dataGridViewThongTin.ReadOnly = true;
             this.dataGridViewThongTin.RowHeadersWidth = 51;
             this.tableLayoutPanel1.SetRowSpan(this.dataGridViewThongTin, 2);
             this.dataGridViewThongTin.RowTemplate.Height = 24;
-            this.dataGridViewThongTin.Size = new System.Drawing.Size(1480, 688);
+            this.dataGridViewThongTin.Size = new System.Drawing.Size(1315, 524);
             this.dataGridViewThongTin.TabIndex = 3;
             // 
             // TenKhach
@@ -151,7 +147,7 @@ namespace QLKS
             this.TenKhach.MinimumWidth = 6;
             this.TenKhach.Name = "TenKhach";
             this.TenKhach.ReadOnly = true;
-            this.TenKhach.Width = 151;
+            this.TenKhach.Width = 132;
             // 
             // Sdt
             // 
@@ -160,7 +156,7 @@ namespace QLKS
             this.Sdt.MinimumWidth = 6;
             this.Sdt.Name = "Sdt";
             this.Sdt.ReadOnly = true;
-            this.Sdt.Width = 112;
+            this.Sdt.Width = 98;
             // 
             // Email
             // 
@@ -169,7 +165,7 @@ namespace QLKS
             this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
-            this.Email.Width = 84;
+            this.Email.Width = 71;
             // 
             // Cccd
             // 
@@ -178,7 +174,7 @@ namespace QLKS
             this.Cccd.MinimumWidth = 6;
             this.Cccd.Name = "Cccd";
             this.Cccd.ReadOnly = true;
-            this.Cccd.Width = 148;
+            this.Cccd.Width = 127;
             // 
             // LoaiPhong
             // 
@@ -187,7 +183,6 @@ namespace QLKS
             this.LoaiPhong.MinimumWidth = 6;
             this.LoaiPhong.Name = "LoaiPhong";
             this.LoaiPhong.ReadOnly = true;
-            this.LoaiPhong.Width = 116;
             // 
             // SoPhong
             // 
@@ -196,7 +191,7 @@ namespace QLKS
             this.SoPhong.MinimumWidth = 6;
             this.SoPhong.Name = "SoPhong";
             this.SoPhong.ReadOnly = true;
-            this.SoPhong.Width = 109;
+            this.SoPhong.Width = 93;
             // 
             // TenNhanVien
             // 
@@ -205,7 +200,7 @@ namespace QLKS
             this.TenNhanVien.MinimumWidth = 6;
             this.TenNhanVien.Name = "TenNhanVien";
             this.TenNhanVien.ReadOnly = true;
-            this.TenNhanVien.Width = 114;
+            this.TenNhanVien.Width = 99;
             // 
             // MaNV
             // 
@@ -214,7 +209,7 @@ namespace QLKS
             this.MaNV.MinimumWidth = 6;
             this.MaNV.Name = "MaNV";
             this.MaNV.ReadOnly = true;
-            this.MaNV.Width = 67;
+            this.MaNV.Width = 56;
             // 
             // NgayDat
             // 
@@ -223,7 +218,7 @@ namespace QLKS
             this.NgayDat.MinimumWidth = 6;
             this.NgayDat.Name = "NgayDat";
             this.NgayDat.ReadOnly = true;
-            this.NgayDat.Width = 148;
+            this.NgayDat.Width = 129;
             // 
             // NgayTra
             // 
@@ -232,7 +227,7 @@ namespace QLKS
             this.NgayTra.MinimumWidth = 6;
             this.NgayTra.Name = "NgayTra";
             this.NgayTra.ReadOnly = true;
-            this.NgayTra.Width = 145;
+            this.NgayTra.Width = 129;
             // 
             // PTTT
             // 
@@ -241,7 +236,7 @@ namespace QLKS
             this.PTTT.MinimumWidth = 6;
             this.PTTT.Name = "PTTT";
             this.PTTT.ReadOnly = true;
-            this.PTTT.Width = 102;
+            this.PTTT.Width = 89;
             // 
             // TongTien
             // 
@@ -250,15 +245,16 @@ namespace QLKS
             this.TongTien.MinimumWidth = 6;
             this.TongTien.Name = "TongTien";
             this.TongTien.ReadOnly = true;
-            this.TongTien.Width = 107;
+            this.TongTien.Width = 94;
             // 
             // btn_Exel
             // 
             this.btn_Exel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Exel.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exel.Location = new System.Drawing.Point(1226, 837);
+            this.btn_Exel.Location = new System.Drawing.Point(1091, 670);
+            this.btn_Exel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Exel.Name = "btn_Exel";
-            this.btn_Exel.Size = new System.Drawing.Size(143, 34);
+            this.btn_Exel.Size = new System.Drawing.Size(126, 27);
             this.btn_Exel.TabIndex = 4;
             this.btn_Exel.Text = "Xuất Exel";
             this.btn_Exel.UseVisualStyleBackColor = true;
@@ -268,9 +264,10 @@ namespace QLKS
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1375, 837);
+            this.button1.Location = new System.Drawing.Point(1223, 670);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 34);
+            this.button1.Size = new System.Drawing.Size(95, 27);
             this.button1.TabIndex = 5;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = true;
@@ -278,12 +275,11 @@ namespace QLKS
             // 
             // ThongTinChiTiet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1486, 874);
+            this.ClientSize = new System.Drawing.Size(1321, 699);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ThongTinChiTiet";
             this.Text = "ThongTinChiTiet";
             this.Load += new System.EventHandler(this.ThongTinChiTiet_Load);

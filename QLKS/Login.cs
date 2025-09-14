@@ -82,9 +82,8 @@ namespace QLKS
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             QuenMK qmk = new QuenMK();
-            qmk.MdiParent = this.MdiParent;
             qmk.Show();
-            qmk.BringToFront();
+            this.Hide();
         }
     }
 }

@@ -140,6 +140,7 @@ namespace QLKS
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            TimKiemTheoTenKhach();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -161,7 +162,7 @@ namespace QLKS
 
                                 // ===== Thêm tiêu đề "THỐNG KÊ" =====
                                 // Ghi chữ tiêu đề vào ô A1
-                                ws.Cell(1, 1).Value = "THỐNG KÊ";
+                                ws.Cell(1, 1).Value = "THỐNG KÊ DOANH THU";
                                 // Gộp các ô tiêu đề trải dài hết số cột của DataGridView
                                 ws.Range(1, 1, 1, dataGridViewThongTin.Columns.Count).Merge();
                                 // Căn giữa, in đậm, tăng cỡ chữ

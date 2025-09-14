@@ -89,12 +89,13 @@ namespace QLKS
                     nv.MaNV,
                     lp.LoaiPhong,
                     p.SoPhong
+                    
                 FROM DatPhong dp
                 LEFT JOIN Khach k ON dp.IDKhach = k.IDKhach
                 LEFT JOIN Phong p ON dp.IDPhong = p.IDPhong
                 LEFT JOIN KieuPhong lp ON p.IDLoaiPhong = lp.IDLoaiPhong
                 LEFT JOIN NhanVien nv ON dp.IDNhanVien = nv.IDNhanVien
-                WHERE dp.IsDeleted = 0;
+                WHERE dp.IsDeleted = 0 and p.TinhTrang != N'Trống';
             ");
 
             dataGridViewDP.DataSource = dt;

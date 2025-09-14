@@ -28,8 +28,6 @@ namespace QLKS
         string Lenh = @"";
         SqlConnection KetNoi;
         SqlCommand ThucHien;
-        SqlDataReader Doc;
-
 
         private void QuenMK_Load_1(object sender, EventArgs e)
         {
