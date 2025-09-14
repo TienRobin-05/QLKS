@@ -44,7 +44,10 @@ namespace QLKS
             ";
 
             DataTable dt = db.GetData(sqlThemKhach);
+
             int idKhach = Convert.ToInt32(dt.Rows[0]["IDKhach"]);
+
+
 
             // 2. Thêm vào bảng đặt phòng
             string sqlDatPhong = $@"

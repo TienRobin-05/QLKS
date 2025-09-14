@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using ClosedXML.Excel;
 
 namespace QLKS
 {
@@ -139,6 +140,79 @@ namespace QLKS
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Check if the DataGridView has any rows
+            if (dataGridViewThongTin.Rows.Count > 0)
+            {
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Filter = "Excel Workbook|*.xlsx";
+
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                var ws = wb.Worksheets.Add("NhanVien");
+
+                                // ===== Thêm tiêu đề "THỐNG KÊ" =====
+                                // Ghi chữ tiêu đề vào ô A1
+                                ws.Cell(1, 1).Value = "THỐNG KÊ";
+                                // Gộp các ô tiêu đề trải dài hết số cột của DataGridView
+                                ws.Range(1, 1, 1, dataGridViewThongTin.Columns.Count).Merge();
+                                // Căn giữa, in đậm, tăng cỡ chữ
+                                var titleRange = ws.Range(1, 1, 1, dataGridViewThongTin.Columns.Count);
+                                titleRange.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                                titleRange.Style.Font.Bold = true;
+                                titleRange.Style.Font.FontSize = 16;
+
+                                // ===== Ghi header bắt đầu từ hàng 2 =====
+                                for (int i = 0; i < dataGridViewThongTin.Columns.Count; i++)
+                                {
+                                    ws.Cell(2, i + 1).Value = dataGridViewThongTin.Columns[i].HeaderText;
+                                }
+
+                                // ===== Ghi dữ liệu bắt đầu từ hàng 3 =====
+                                for (int i = 0; i < dataGridViewThongTin.Rows.Count; i++)
+                                {
+                                    for (int j = 0; j < dataGridViewThongTin.Columns.Count; j++)
+                                    {
+                                        ws.Cell(i + 3, j + 1).Value = dataGridViewThongTin.Rows[i].Cells[j].Value?.ToString();
+                                    }
+                                }
+
+                                // ===== Thêm border cho toàn bộ bảng (bao gồm header + dữ liệu) =====
+                                var range = ws.Range(2, 1, dataGridViewThongTin.Rows.Count + 2, dataGridViewThongTin.Columns.Count);
+                                range.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+                                range.Style.Border.InsideBorder = XLBorderStyleValues.Thin;
+
+                                // Tự động co giãn cột
+                                ws.Columns().AdjustToContents();
+
+                                wb.SaveAs(sfd.FileName);
+                                MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
