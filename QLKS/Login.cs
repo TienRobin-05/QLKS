@@ -83,10 +83,7 @@ namespace QLKS
         {
             QuenMK qmk = new QuenMK();
             qmk.MdiParent = this.MdiParent;
-            // mở toàn màn hình
-            qmk.WindowState = FormWindowState.Maximized;
             qmk.Show();
-            // Đưa form vừa mở lên trước cùng
             qmk.BringToFront();
         }
     }

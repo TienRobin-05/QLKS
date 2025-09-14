@@ -12,10 +12,14 @@ namespace QLKS
 {
     public partial class DatPhong : Form
     {
-        private DbHandle db = new DbHandle();
+        private DbHandle db;   // chỉ khai báo thôi, chưa tạo
         public DatPhong()
         {
             InitializeComponent();
+            if (!DesignMode)   // chỉ khởi tạo khi chạy chương trình, không phải khi mở Designer
+            {
+                db = new DbHandle();
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -161,7 +165,7 @@ namespace QLKS
                 return;
             }
 
-            // Lấy IDDatPhong từ dòng chọn
+            // lấy IDDatPhong từ dòng chọn
             int idDatPhong = Convert.ToInt32(dataGridViewDP.CurrentRow.Cells["IDDatPhong"].Value);
 
             string hoVaTen = txtKhach.Text.Trim();
@@ -169,16 +173,16 @@ namespace QLKS
             string email = txtEmail.Text.Trim();
             string cccd = txtCccd.Text.Trim();
 
-            // Lấy ID từ combobox
+            // lấy ID từ combobox
             int idNhanVien = (cboMaNV.SelectedValue != null) ? Convert.ToInt32(cboMaNV.SelectedValue) : 0;
             int idPhongMoi = (cboSoPhong.SelectedValue != null) ? Convert.ToInt32(cboSoPhong.SelectedValue) : 0;
 
-            // Tách họ và tên
+            // tách họ và tên
             string[] parts = hoVaTen.Split(' ');
             string ten = parts[parts.Length - 1];
             string hoTenDem = string.Join(" ", parts, 0, parts.Length - 1);
 
-            // 1. Lấy IDKhach, IDPhong cũ từ DatPhong
+            // lấy IDKhach, IDPhong cũ từ DatPhong
             DataTable dt = db.GetData($@"
                 SELECT IDKhach, IDPhong 
                 FROM DatPhong 
@@ -189,7 +193,7 @@ namespace QLKS
             int idKhach = Convert.ToInt32(dt.Rows[0]["IDKhach"]);
             int idPhongCu = Convert.ToInt32(dt.Rows[0]["IDPhong"]);
 
-            // 2. Update thông tin khách
+            // update thông tin khách
             string sqlSuaKhach = $@"
                 UPDATE Khach 
                 SET HoTenDem = N'{hoTenDem}', Ten = N'{ten}', 
@@ -198,7 +202,7 @@ namespace QLKS
             ";
             db.Command(sqlSuaKhach);
 
-            // 3. Update bảng DatPhong
+            // update bảng DatPhong
             string sqlSuaDatPhong = $@"
                 UPDATE DatPhong 
                 SET IDNhanVien = {idNhanVien}, 
@@ -207,12 +211,12 @@ namespace QLKS
             ";
             db.Command(sqlSuaDatPhong);
 
-            // 4. Nếu đổi phòng thì cập nhật trạng thái phòng
+            // đổi phòng thì cập nhật trạng thái phòng
             if (idPhongCu != idPhongMoi)
             {
-                // Phòng cũ thành "Trống"
+                // phòng cũ thành "Trống"
                 db.Command($"UPDATE Phong SET TinhTrang = N'Trống' WHERE IDPhong = {idPhongCu}");
-                // Phòng mới thành "Đang thuê"
+                // phòng mới thành "Đang thuê"
                 db.Command($"UPDATE Phong SET TinhTrang = N'Đang thuê' WHERE IDPhong = {idPhongMoi}");
             }
 
@@ -226,13 +230,13 @@ namespace QLKS
 
             DataGridViewRow row = dataGridViewDP.Rows[e.RowIndex];
 
-            // Gán dữ liệu vào TextBox
+            // gán dữ liệu vào TextBox
             txtKhach.Text = row.Cells["HoTen"].Value?.ToString();   // cột HoTen (hoặc HoTenDem + Ten)
             txtsdt.Text = row.Cells["SoDienThoai"].Value?.ToString();
             txtEmail.Text = row.Cells["Email"].Value?.ToString();
             txtCccd.Text = row.Cells["Cccd"].Value?.ToString();
 
-            // Nếu bạn có cột IDNhanVien, IDLoaiPhong, IDPhong trong DataGridView
+            // nếu có cột IDNhanVien, IDLoaiPhong, IDPhong trong DataGridView
             if (row.Cells["IDNhanVien"].Value != null)
                 cboMaNV.SelectedValue = Convert.ToInt32(row.Cells["IDNhanVien"].Value);
 
@@ -251,7 +255,7 @@ namespace QLKS
                 return;
             }
 
-            // Hỏi lại người dùng
+            // hỏi ng dùng
             DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa bản ghi này?",
                                                   "Xác nhận xóa",
                                                   MessageBoxButtons.YesNo,
@@ -259,11 +263,11 @@ namespace QLKS
             if (result != DialogResult.Yes)
                 return;
 
-            // Lấy IDDatPhong và IDPhong từ dòng chọn
+            // lấy IDDatPhong và IDPhong từ dòng chọn
             int idDatPhong = Convert.ToInt32(dataGridViewDP.CurrentRow.Cells["IDDatPhong"].Value);
             int idPhong = Convert.ToInt32(dataGridViewDP.CurrentRow.Cells["IDPhong"].Value);
 
-            // 1. Đánh dấu xóa trong DatPhong
+            // đánh dấu xóa trong DatPhong
             string sqlXoa = $@"
                 UPDATE DatPhong
                 SET IsDeleted = 1
@@ -271,7 +275,7 @@ namespace QLKS
             ";
             db.Command(sqlXoa);
 
-            // 2. Cập nhật phòng thành "Trống"
+            // cập nhật phòng thành "Trống"
             string sqlPhong = $@"
                 UPDATE Phong
                 SET TinhTrang = N'Trống'
@@ -280,8 +284,6 @@ namespace QLKS
             db.Command(sqlPhong);
 
             MessageBox.Show("Xóa đặt phòng thành công!");
-
-            // 3. Load lại dữ liệu
             HienThi();
         }
 

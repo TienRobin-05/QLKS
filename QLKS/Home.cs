@@ -39,13 +39,6 @@ namespace QLKS
             
         }
 
-        private void mnDangxuat_Click(object sender, EventArgs e)
-        {
-            Login LG = new Login();
-            LG.Show();
-            this.Hide();
-        }
-
         private void đặtPhòngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DatPhong dp = new DatPhong();
@@ -102,6 +95,19 @@ namespace QLKS
             tv.WindowState = FormWindowState.Maximized;
             tv.Show();
             tv.BringToFront();
+        }
+
+        private void mnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            QuenMK qmk = new QuenMK();
+            qmk.Show();
+            this.Hide();
+        }
+        private void mnDangxuat_Click(object sender, EventArgs e)
+        {
+            Login LG = new Login();
+            LG.Show();
+            this.Hide();
         }
     }
 }

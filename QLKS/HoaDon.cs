@@ -37,7 +37,7 @@ namespace QLKS
         {
             KetNoi = new SqlConnection(Nguon);
 
-            // load phương thức thanh toán vào combobox
+            // thêm dsach thanh toán vào cbbox 
             comboBoxPTTT.Items.Clear();
             comboBoxPTTT.Items.Add("Tiền mặt");
             comboBoxPTTT.Items.Add("Chuyển khoản");
@@ -71,7 +71,7 @@ namespace QLKS
                 dataGridView1.Rows[i].Cells[2].Value = Doc["SoPhong"];
                 dataGridView1.Rows[i].Cells[3].Value = Doc["NgayDat"];
                 dataGridView1.Rows[i].Cells[4].Value = Doc["GiaTien"];
-                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[0].Visible = false;  // ẩn cột ID đặt phòng
                 i++;
             }
             KetNoi.Close();
@@ -79,37 +79,38 @@ namespace QLKS
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //ng dùng click vào 1 ô datagridv 
             if (e.RowIndex >= 0)
             {
-                txtTenKhach.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                txtSoPhong.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                txtTenKhach.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString(); // gán khách
+                txtSoPhong.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString(); // gán số phòng
                 txtNgayDat.Text = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[3].Value).ToString("dd/MM/yyyy");
-                currentGiaTien = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value);
-                currentIDDatPhong = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                ngayDat = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[3].Value);
+                currentGiaTien = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[4].Value); // lưu giá tiền
+                currentIDDatPhong = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value); // lưu ID
+                ngayDat = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[3].Value); // lưu ngày đặt
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int soNgay = (DateTime.Now - ngayDat).Days;
-            if (soNgay == 0) soNgay = 1;
+            int soNgay = (DateTime.Now - ngayDat).Days;   // ngày thuê = ngày hiện tại - ngày đặt
+            if (soNgay == 0) soNgay = 1;  // nếu cùng 1 ngày, tính là 1 ngày
 
-            decimal tongTien = soNgay * currentGiaTien;
-            lbTongTien.Text = tongTien.ToString("N0") + " VND";
+            decimal tongTien = soNgay * currentGiaTien; // tổng tiền = số ngày * giá tiền 1 ngày
+            lbTongTien.Text = tongTien.ToString("N0") + " VND"; // hiện tổng tiền dạng VND
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (currentIDDatPhong == 0)
             {
-                MessageBox.Show("Vui lòng chọn khách hàng/phòng!");
-                return;
+                MessageBox.Show("Vui lòng chọn khách hàng/phòng");
+                return; // thoát ch chọn
             }
             if (comboBoxPTTT.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn phương thức thanh toán!");
-                return;
+                MessageBox.Show("Vui lòng chọn phương thức thanh toán");
+                return; // ch chọn thoát
             }
 
             KetNoi.Open();

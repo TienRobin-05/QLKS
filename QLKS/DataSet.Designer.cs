@@ -7103,7 +7103,7 @@ SELECT IDPhong, SoPhong, IDLoaiPhong, TinhTrang, IsDeleted FROM Phong WHERE (IDP
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet.PhongDataTable GetDataBy() {
+        public virtual DataSet.PhongDataTable GetDataBy1() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             DataSet.PhongDataTable dataTable = new DataSet.PhongDataTable();
             this.Adapter.Fill(dataTable);
@@ -7127,7 +7127,7 @@ SELECT IDPhong, SoPhong, IDLoaiPhong, TinhTrang, IsDeleted FROM Phong WHERE (IDP
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet.PhongDataTable GetDataBy1() {
+        public virtual DataSet.PhongDataTable GetDataBy11() {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             DataSet.PhongDataTable dataTable = new DataSet.PhongDataTable();
             this.Adapter.Fill(dataTable);

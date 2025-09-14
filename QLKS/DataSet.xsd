@@ -222,7 +222,7 @@ SELECT IDLoaiPhong, LoaiPhong, GiaTien, GhiChu FROM KieuPhong WHERE (IDLoaiPhong
               <Mapping SourceColumn="GhiChu" DataSetColumn="GhiChu" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM KieuPhong
@@ -270,7 +270,7 @@ WHERE  (LoaiPhong = @Phong)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO KieuPhong
@@ -285,7 +285,7 @@ SELECT IDLoaiPhong, LoaiPhong, GiaTien, GhiChu FROM KieuPhong WHERE (IDLoaiPhong
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE KieuPhong
@@ -638,7 +638,7 @@ SELECT IDPhong, SoPhong, IDLoaiPhong, TinhTrang, IsDeleted FROM Phong WHERE (IDP
               <Mapping SourceColumn="IsDeleted" DataSetColumn="IsDeleted" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Phong
@@ -664,7 +664,7 @@ WHERE  (IDPhong = @Original_IDPhong) AND (@IsNull_SoPhong = 1) AND (SoPhong IS N
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="QLKS.dbo.Phong" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="QLKS.dbo.Phong" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT IDPhong, SoPhong, IDLoaiPhong, TinhTrang, IsDeleted FROM dbo.Phong</CommandText>
@@ -672,7 +672,7 @@ WHERE  (IDPhong = @Original_IDPhong) AND (@IsNull_SoPhong = 1) AND (SoPhong IS N
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="QLKS.dbo.Phong" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+              <DbSource ConnectionRef="QLKSConnectionString (Settings)" DbObjectName="QLKS.dbo.Phong" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy11" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy11" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT SoPhong, IDLoaiPhong, TinhTrang, IsDeleted
@@ -749,7 +749,7 @@ SELECT IDPhong, SoPhong, IDLoaiPhong, TinhTrang, IsDeleted FROM Phong WHERE (IDP
   <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet" msprop:Generator_UserDSName="DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DatPhong" msprop:Generator_TableClassName="DatPhongDataTable" msprop:Generator_TableVarName="tableDatPhong" msprop:Generator_RowChangedName="DatPhongRowChanged" msprop:Generator_TablePropName="DatPhong" msprop:Generator_RowDeletingName="DatPhongRowDeleting" msprop:Generator_RowChangingName="DatPhongRowChanging" msprop:Generator_RowEvHandlerName="DatPhongRowChangeEventHandler" msprop:Generator_RowDeletedName="DatPhongRowDeleted" msprop:Generator_RowClassName="DatPhongRow" msprop:Generator_UserTableName="DatPhong" msprop:Generator_RowEvArgName="DatPhongRowChangeEvent">
+        <xs:element name="DatPhong" msprop:Generator_TableClassName="DatPhongDataTable" msprop:Generator_TableVarName="tableDatPhong" msprop:Generator_TablePropName="DatPhong" msprop:Generator_RowDeletingName="DatPhongRowDeleting" msprop:Generator_RowChangingName="DatPhongRowChanging" msprop:Generator_RowEvHandlerName="DatPhongRowChangeEventHandler" msprop:Generator_RowDeletedName="DatPhongRowDeleted" msprop:Generator_UserTableName="DatPhong" msprop:Generator_RowChangedName="DatPhongRowChanged" msprop:Generator_RowEvArgName="DatPhongRowChangeEvent" msprop:Generator_RowClassName="DatPhongRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDDatPhong" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDDatPhong" msprop:Generator_ColumnPropNameInRow="IDDatPhong" msprop:Generator_ColumnPropNameInTable="IDDatPhongColumn" msprop:Generator_UserColumnName="IDDatPhong" type="xs:int" />
@@ -762,7 +762,7 @@ SELECT IDPhong, SoPhong, IDLoaiPhong, TinhTrang, IsDeleted FROM Phong WHERE (IDP
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="HoaDon" msprop:Generator_TableClassName="HoaDonDataTable" msprop:Generator_TableVarName="tableHoaDon" msprop:Generator_RowChangedName="HoaDonRowChanged" msprop:Generator_TablePropName="HoaDon" msprop:Generator_RowDeletingName="HoaDonRowDeleting" msprop:Generator_RowChangingName="HoaDonRowChanging" msprop:Generator_RowEvHandlerName="HoaDonRowChangeEventHandler" msprop:Generator_RowDeletedName="HoaDonRowDeleted" msprop:Generator_RowClassName="HoaDonRow" msprop:Generator_UserTableName="HoaDon" msprop:Generator_RowEvArgName="HoaDonRowChangeEvent">
+        <xs:element name="HoaDon" msprop:Generator_TableClassName="HoaDonDataTable" msprop:Generator_TableVarName="tableHoaDon" msprop:Generator_TablePropName="HoaDon" msprop:Generator_RowDeletingName="HoaDonRowDeleting" msprop:Generator_RowChangingName="HoaDonRowChanging" msprop:Generator_RowEvHandlerName="HoaDonRowChangeEventHandler" msprop:Generator_RowDeletedName="HoaDonRowDeleted" msprop:Generator_UserTableName="HoaDon" msprop:Generator_RowChangedName="HoaDonRowChanged" msprop:Generator_RowEvArgName="HoaDonRowChangeEvent" msprop:Generator_RowClassName="HoaDonRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDHoaDon" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDHoaDon" msprop:Generator_ColumnPropNameInRow="IDHoaDon" msprop:Generator_ColumnPropNameInTable="IDHoaDonColumn" msprop:Generator_UserColumnName="IDHoaDon" type="xs:int" />
@@ -780,7 +780,7 @@ SELECT IDPhong, SoPhong, IDLoaiPhong, TinhTrang, IsDeleted FROM Phong WHERE (IDP
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="KieuPhong" msprop:Generator_TableClassName="KieuPhongDataTable" msprop:Generator_TableVarName="tableKieuPhong" msprop:Generator_RowChangedName="KieuPhongRowChanged" msprop:Generator_TablePropName="KieuPhong" msprop:Generator_RowDeletingName="KieuPhongRowDeleting" msprop:Generator_RowChangingName="KieuPhongRowChanging" msprop:Generator_RowEvHandlerName="KieuPhongRowChangeEventHandler" msprop:Generator_RowDeletedName="KieuPhongRowDeleted" msprop:Generator_RowClassName="KieuPhongRow" msprop:Generator_UserTableName="KieuPhong" msprop:Generator_RowEvArgName="KieuPhongRowChangeEvent">
+        <xs:element name="KieuPhong" msprop:Generator_TableClassName="KieuPhongDataTable" msprop:Generator_TableVarName="tableKieuPhong" msprop:Generator_TablePropName="KieuPhong" msprop:Generator_RowDeletingName="KieuPhongRowDeleting" msprop:Generator_RowChangingName="KieuPhongRowChanging" msprop:Generator_RowEvHandlerName="KieuPhongRowChangeEventHandler" msprop:Generator_RowDeletedName="KieuPhongRowDeleted" msprop:Generator_UserTableName="KieuPhong" msprop:Generator_RowChangedName="KieuPhongRowChanged" msprop:Generator_RowEvArgName="KieuPhongRowChangeEvent" msprop:Generator_RowClassName="KieuPhongRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDLoaiPhong" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDLoaiPhong" msprop:Generator_ColumnPropNameInRow="IDLoaiPhong" msprop:Generator_ColumnPropNameInTable="IDLoaiPhongColumn" msprop:Generator_UserColumnName="IDLoaiPhong" type="xs:int" />
@@ -802,7 +802,7 @@ SELECT IDPhong, SoPhong, IDLoaiPhong, TinhTrang, IsDeleted FROM Phong WHERE (IDP
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Khach" msprop:Generator_TableClassName="KhachDataTable" msprop:Generator_TableVarName="tableKhach" msprop:Generator_RowChangedName="KhachRowChanged" msprop:Generator_TablePropName="Khach" msprop:Generator_RowDeletingName="KhachRowDeleting" msprop:Generator_RowChangingName="KhachRowChanging" msprop:Generator_RowEvHandlerName="KhachRowChangeEventHandler" msprop:Generator_RowDeletedName="KhachRowDeleted" msprop:Generator_RowClassName="KhachRow" msprop:Generator_UserTableName="Khach" msprop:Generator_RowEvArgName="KhachRowChangeEvent">
+        <xs:element name="Khach" msprop:Generator_TableClassName="KhachDataTable" msprop:Generator_TableVarName="tableKhach" msprop:Generator_TablePropName="Khach" msprop:Generator_RowDeletingName="KhachRowDeleting" msprop:Generator_RowChangingName="KhachRowChanging" msprop:Generator_RowEvHandlerName="KhachRowChangeEventHandler" msprop:Generator_RowDeletedName="KhachRowDeleted" msprop:Generator_UserTableName="Khach" msprop:Generator_RowChangedName="KhachRowChanged" msprop:Generator_RowEvArgName="KhachRowChangeEvent" msprop:Generator_RowClassName="KhachRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDKhach" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDKhach" msprop:Generator_ColumnPropNameInRow="IDKhach" msprop:Generator_ColumnPropNameInTable="IDKhachColumn" msprop:Generator_UserColumnName="IDKhach" type="xs:int" />
@@ -839,7 +839,7 @@ SELECT IDPhong, SoPhong, IDLoaiPhong, TinhTrang, IsDeleted FROM Phong WHERE (IDP
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="NhanVien" msprop:Generator_TableClassName="NhanVienDataTable" msprop:Generator_TableVarName="tableNhanVien" msprop:Generator_RowChangedName="NhanVienRowChanged" msprop:Generator_TablePropName="NhanVien" msprop:Generator_RowDeletingName="NhanVienRowDeleting" msprop:Generator_RowChangingName="NhanVienRowChanging" msprop:Generator_RowEvHandlerName="NhanVienRowChangeEventHandler" msprop:Generator_RowDeletedName="NhanVienRowDeleted" msprop:Generator_RowClassName="NhanVienRow" msprop:Generator_UserTableName="NhanVien" msprop:Generator_RowEvArgName="NhanVienRowChangeEvent">
+        <xs:element name="NhanVien" msprop:Generator_TableClassName="NhanVienDataTable" msprop:Generator_TableVarName="tableNhanVien" msprop:Generator_TablePropName="NhanVien" msprop:Generator_RowDeletingName="NhanVienRowDeleting" msprop:Generator_RowChangingName="NhanVienRowChanging" msprop:Generator_RowEvHandlerName="NhanVienRowChangeEventHandler" msprop:Generator_RowDeletedName="NhanVienRowDeleted" msprop:Generator_UserTableName="NhanVien" msprop:Generator_RowChangedName="NhanVienRowChanged" msprop:Generator_RowEvArgName="NhanVienRowChangeEvent" msprop:Generator_RowClassName="NhanVienRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDNhanVien" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDNhanVien" msprop:Generator_ColumnPropNameInRow="IDNhanVien" msprop:Generator_ColumnPropNameInTable="IDNhanVienColumn" msprop:Generator_UserColumnName="IDNhanVien" type="xs:int" />
@@ -878,7 +878,7 @@ SELECT IDPhong, SoPhong, IDLoaiPhong, TinhTrang, IsDeleted FROM Phong WHERE (IDP
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Phong" msprop:Generator_TableClassName="PhongDataTable" msprop:Generator_TableVarName="tablePhong" msprop:Generator_RowChangedName="PhongRowChanged" msprop:Generator_TablePropName="Phong" msprop:Generator_RowDeletingName="PhongRowDeleting" msprop:Generator_RowChangingName="PhongRowChanging" msprop:Generator_RowEvHandlerName="PhongRowChangeEventHandler" msprop:Generator_RowDeletedName="PhongRowDeleted" msprop:Generator_RowClassName="PhongRow" msprop:Generator_UserTableName="Phong" msprop:Generator_RowEvArgName="PhongRowChangeEvent">
+        <xs:element name="Phong" msprop:Generator_TableClassName="PhongDataTable" msprop:Generator_TableVarName="tablePhong" msprop:Generator_TablePropName="Phong" msprop:Generator_RowDeletingName="PhongRowDeleting" msprop:Generator_RowChangingName="PhongRowChanging" msprop:Generator_RowEvHandlerName="PhongRowChangeEventHandler" msprop:Generator_RowDeletedName="PhongRowDeleted" msprop:Generator_UserTableName="Phong" msprop:Generator_RowChangedName="PhongRowChanged" msprop:Generator_RowEvArgName="PhongRowChangeEvent" msprop:Generator_RowClassName="PhongRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDPhong" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDPhong" msprop:Generator_ColumnPropNameInRow="IDPhong" msprop:Generator_ColumnPropNameInTable="IDPhongColumn" msprop:Generator_UserColumnName="IDPhong" type="xs:int" />
@@ -924,11 +924,11 @@ SELECT IDPhong, SoPhong, IDLoaiPhong, TinhTrang, IsDeleted FROM Phong WHERE (IDP
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Bookings_Customers" msdata:parent="Khach" msdata:child="DatPhong" msdata:parentkey="IDKhach" msdata:childkey="IDKhach" msprop:Generator_UserChildTable="DatPhong" msprop:Generator_ChildPropName="GetDatPhongRows" msprop:Generator_UserRelationName="FK_Bookings_Customers" msprop:Generator_ParentPropName="KhachRow" msprop:Generator_RelationVarName="relationFK_Bookings_Customers" msprop:Generator_UserParentTable="Khach" />
-      <msdata:Relationship name="FK_Bookings_Employees" msdata:parent="NhanVien" msdata:child="DatPhong" msdata:parentkey="IDNhanVien" msdata:childkey="IDNhanVien" msprop:Generator_UserChildTable="DatPhong" msprop:Generator_ChildPropName="GetDatPhongRows" msprop:Generator_UserRelationName="FK_Bookings_Employees" msprop:Generator_ParentPropName="NhanVienRow" msprop:Generator_RelationVarName="relationFK_Bookings_Employees" msprop:Generator_UserParentTable="NhanVien" />
-      <msdata:Relationship name="FK_Bookings_Rooms" msdata:parent="Phong" msdata:child="DatPhong" msdata:parentkey="IDPhong" msdata:childkey="IDPhong" msprop:Generator_UserChildTable="DatPhong" msprop:Generator_ChildPropName="GetDatPhongRows" msprop:Generator_UserRelationName="FK_Bookings_Rooms" msprop:Generator_ParentPropName="PhongRow" msprop:Generator_RelationVarName="relationFK_Bookings_Rooms" msprop:Generator_UserParentTable="Phong" />
-      <msdata:Relationship name="FK_Invoices_Bookings" msdata:parent="DatPhong" msdata:child="HoaDon" msdata:parentkey="IDDatPhong" msdata:childkey="IDDatPhong" msprop:Generator_UserChildTable="HoaDon" msprop:Generator_ChildPropName="GetHoaDonRows" msprop:Generator_UserRelationName="FK_Invoices_Bookings" msprop:Generator_RelationVarName="relationFK_Invoices_Bookings" msprop:Generator_UserParentTable="DatPhong" msprop:Generator_ParentPropName="DatPhongRow" />
-      <msdata:Relationship name="FK_Rooms_RoomTypes" msdata:parent="KieuPhong" msdata:child="Phong" msdata:parentkey="IDLoaiPhong" msdata:childkey="IDLoaiPhong" msprop:Generator_UserChildTable="Phong" msprop:Generator_ChildPropName="GetPhongRows" msprop:Generator_UserRelationName="FK_Rooms_RoomTypes" msprop:Generator_RelationVarName="relationFK_Rooms_RoomTypes" msprop:Generator_UserParentTable="KieuPhong" msprop:Generator_ParentPropName="KieuPhongRow" />
+      <msdata:Relationship name="FK_Bookings_Customers" msdata:parent="Khach" msdata:child="DatPhong" msdata:parentkey="IDKhach" msdata:childkey="IDKhach" msprop:Generator_UserChildTable="DatPhong" msprop:Generator_ChildPropName="GetDatPhongRows" msprop:Generator_UserRelationName="FK_Bookings_Customers" msprop:Generator_RelationVarName="relationFK_Bookings_Customers" msprop:Generator_UserParentTable="Khach" msprop:Generator_ParentPropName="KhachRow" />
+      <msdata:Relationship name="FK_Bookings_Employees" msdata:parent="NhanVien" msdata:child="DatPhong" msdata:parentkey="IDNhanVien" msdata:childkey="IDNhanVien" msprop:Generator_UserChildTable="DatPhong" msprop:Generator_ChildPropName="GetDatPhongRows" msprop:Generator_UserRelationName="FK_Bookings_Employees" msprop:Generator_RelationVarName="relationFK_Bookings_Employees" msprop:Generator_UserParentTable="NhanVien" msprop:Generator_ParentPropName="NhanVienRow" />
+      <msdata:Relationship name="FK_Bookings_Rooms" msdata:parent="Phong" msdata:child="DatPhong" msdata:parentkey="IDPhong" msdata:childkey="IDPhong" msprop:Generator_UserChildTable="DatPhong" msprop:Generator_ChildPropName="GetDatPhongRows" msprop:Generator_UserRelationName="FK_Bookings_Rooms" msprop:Generator_RelationVarName="relationFK_Bookings_Rooms" msprop:Generator_UserParentTable="Phong" msprop:Generator_ParentPropName="PhongRow" />
+      <msdata:Relationship name="FK_Invoices_Bookings" msdata:parent="DatPhong" msdata:child="HoaDon" msdata:parentkey="IDDatPhong" msdata:childkey="IDDatPhong" msprop:Generator_UserChildTable="HoaDon" msprop:Generator_ChildPropName="GetHoaDonRows" msprop:Generator_UserRelationName="FK_Invoices_Bookings" msprop:Generator_ParentPropName="DatPhongRow" msprop:Generator_RelationVarName="relationFK_Invoices_Bookings" msprop:Generator_UserParentTable="DatPhong" />
+      <msdata:Relationship name="FK_Rooms_RoomTypes" msdata:parent="KieuPhong" msdata:child="Phong" msdata:parentkey="IDLoaiPhong" msdata:childkey="IDLoaiPhong" msprop:Generator_UserChildTable="Phong" msprop:Generator_ChildPropName="GetPhongRows" msprop:Generator_UserRelationName="FK_Rooms_RoomTypes" msprop:Generator_ParentPropName="KieuPhongRow" msprop:Generator_RelationVarName="relationFK_Rooms_RoomTypes" msprop:Generator_UserParentTable="KieuPhong" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

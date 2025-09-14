@@ -32,16 +32,17 @@ namespace QLKS
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-             // Lấy giá trị từ textbox
-            string hoVaTen = textBoxTenNV.Text.Trim();
+             // lấy giá trị từ textbox
+            string hoVaTen = textBoxTenNV.Text.Trim();// lấy và cắt khoảng trắng đầu/cuối họ tên
 
-            // Tách họ tên
-            string[] parts = hoVaTen.Split(' ');
-            string ten = parts[parts.Length - 1]; // Lấy từ cuối là tên
-            string hoTenDem = string.Join(" ", parts, 0, parts.Length - 1); // Các phần còn lại là họ + tên đệm
+            // tách họ tên
+            string[] parts = hoVaTen.Split(' '); // tách chuỗi họ tên theo dấu cách
+            string ten = parts[parts.Length - 1]; // lấy từ cuối là tên
+            string hoTenDem = string.Join(" ", parts, 0, parts.Length - 1); // các phần còn lại là họ + tên đệm
             Lenh = @"INSERT INTO NhanVien
                   (HoTenDem, Ten, MaNV, Sdt)
            VALUES (@HoTenDem,@Ten,@MaNV,@Sdt)";
+            //gán và truyền tham số
             ThucHien = new SqlCommand(Lenh, KetNoi);
             ThucHien.Parameters.Add("@HoTenDem", SqlDbType.NVarChar).Value = hoTenDem;
             ThucHien.Parameters.Add("@Ten", SqlDbType.NVarChar).Value = ten;
@@ -58,7 +59,7 @@ namespace QLKS
             dataGridViewQLNV.Rows.Clear();
             Lenh = @"SELECT IDNhanVien, HoTenDem, Ten, MaNV, Sdt
          FROM NhanVien
-         WHERE IsDeleted = 0";
+         WHERE IsDeleted = 0"; // câu lệnh lấy danh sách NV chưa bị xóa
             ThucHien = new SqlCommand(Lenh, KetNoi);
 
             KetNoi.Open();
@@ -88,13 +89,13 @@ namespace QLKS
             // Lấy giá trị từ textbox
             string hoVaTen = textBoxTenNV.Text.Trim();
 
-            // Tách họ tên
-            string[] parts = hoVaTen.Split(' ');
-            string ten = parts[parts.Length - 1]; // Lấy từ cuối là tên
-            string hoTenDem = string.Join(" ", parts, 0, parts.Length - 1); // Các phần còn lại là họ + tên đệm
+            // tách họ tên
+            string[] parts = hoVaTen.Split(' '); // tách chuỗi họ tên theo dấu cách
+            string ten = parts[parts.Length - 1]; // lấy từ cuối là tên
+            string hoTenDem = string.Join(" ", parts, 0, parts.Length - 1); // các phần còn lại là họ + tên đệm
             Lenh = @"UPDATE NhanVien
-SET          HoTenDem = @HoTenDem, Ten = @Ten, MaNV = @MaNV, Sdt = @Sdt
-WHERE  (IDNhanVien = @Original_IDNhanVien)";
+                    SET    HoTenDem = @HoTenDem, Ten = @Ten, MaNV = @MaNV, Sdt = @Sdt
+                    WHERE  (IDNhanVien = @Original_IDNhanVien)";
             ThucHien = new SqlCommand(Lenh, KetNoi);
             ThucHien.Parameters.Add("@HoTenDem", SqlDbType.NVarChar).Value = hoTenDem;
             ThucHien.Parameters.Add("@Ten", SqlDbType.NVarChar).Value = ten;
@@ -109,13 +110,14 @@ WHERE  (IDNhanVien = @Original_IDNhanVien)";
 
         private void dataGridViewQLNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             var hoTenDem = dataGridViewQLNV.CurrentRow.Cells[1].Value.ToString();
             var ten = dataGridViewQLNV.CurrentRow.Cells[2].Value.ToString();
 
-            // Nối HoTenDem + Ten vào 1 textbox
+            // nối họ + tên vào 1 texbox 
             textBoxTenNV.Text = string.IsNullOrEmpty(hoTenDem) ? ten : hoTenDem + " " + ten;
 
-            // Nếu muốn, bạn cũng có thể điền các textbox khác
+            // MaNV và SDT
             textBoxMaNV.Text = dataGridViewQLNV.CurrentRow.Cells[3].Value.ToString();
             textBoxSDTNV.Text = dataGridViewQLNV.CurrentRow.Cells[4].Value.ToString();
 
@@ -123,35 +125,36 @@ WHERE  (IDNhanVien = @Original_IDNhanVien)";
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            // ===== 1. Kiểm tra lựa chọn và lấy ID =====
+            // ktra và lấy ID
             if (dataGridViewQLNV.CurrentRow == null)
             {
-                MessageBox.Show("Vui lòng chọn nhân viên cần xóa.");
+                MessageBox.Show("Chọn nhân viên cần xóa");
                 return;
             }
 
             object value = dataGridViewQLNV.CurrentRow.Cells[0].Value;
             if (value == null || !int.TryParse(value.ToString(), out int idNhanVien))
             {
-                MessageBox.Show("ID nhân viên không hợp lệ.");
+                MessageBox.Show("ID nhân viên không hợp lệ");
                 return;
             }
 
-            // ===== 2. Xác nhận người dùng =====
+            // Xác nhận
             DialogResult kq = MessageBox.Show(
-                "Bạn có chắc chắn muốn xóa nhân viên này?",
+                "Bạn chắc chắn muốn xóa ?",
                 "Xác nhận xóa",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (kq != DialogResult.Yes) return;
 
-            // ===== 3. Xóa cứng trong database =====
+            // Xóa cứng data
             string connStr = "Data Source=.;Initial Catalog=QLKS;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connStr))
-            using (SqlCommand cmd = new SqlCommand(
-                "DELETE FROM NhanVien WHERE IDNhanVien = @ID", conn))
+
+            using (SqlCommand cmd = new SqlCommand("DELETE FROM NhanVien WHERE IDNhanVien = @ID", conn))
+
             {
                 cmd.Parameters.Add("@ID", SqlDbType.Int).Value = idNhanVien;
 
@@ -161,17 +164,15 @@ WHERE  (IDNhanVien = @Original_IDNhanVien)";
                     int rows = cmd.ExecuteNonQuery();
 
                     if (rows > 0)
-                        MessageBox.Show("Đã xóa nhân viên thành công!");
+                        MessageBox.Show("Xóa nhân viên thành công");
                     else
-                        MessageBox.Show("Không tìm thấy nhân viên để xóa.");
+                        MessageBox.Show("Không thấy nhân viên để xóa");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi khi xóa: " + ex.Message);
                 }
             }
-
-            // ===== 4. Cập nhật lại danh sách nhân viên =====
             HienThi();
         }
 
@@ -188,7 +189,7 @@ WHERE  (IDNhanVien = @Original_IDNhanVien)";
 
             ThucHien = new SqlCommand(Lenh, KetNoi);
 
-            // nếu LIKE: thêm ký tự % để tìm gần đúng
+            // thêm ký tự % để tìm gần đúng
             ThucHien.Parameters.Add("@MaNV", SqlDbType.NVarChar).Value = "%" + maNVCanTim + "%";
 
             KetNoi.Open();
